@@ -1,0 +1,24 @@
+.homes-item {
+  width: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.homes-item:nth-last-child(2n) {
+  display: flex;
+}
+
+.text-homes {
+  font-size: 24px;
+  font-weight: 400;
+  color: #3077c6;
+  cursor: pointer;
+}
+
+.text-country-homes {
+  font-size: 24px;
+  font-weight: 400;
+  color: #bfbfbf;
+}
