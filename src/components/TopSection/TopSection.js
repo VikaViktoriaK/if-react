@@ -34,7 +34,7 @@ const TopSection = () => {
               className="app-store"
               href="https://www.apple.com/ru/app-store/"
             ></a>
-          </div>
+          </div>{" "}
         </div>
       </div>
     </div>

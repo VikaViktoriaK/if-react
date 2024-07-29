@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./Search.css";
-import "../HomesCard/Homes";
 import { hotelsData } from "../../assets/config";
 
 export const Top = () => {
@@ -25,14 +24,16 @@ export const Top = () => {
 
   const createHotelsMarkUp = (data) =>
     data.map(({ imageUrl, name, city, country }) => (
-      <div key={`${name}${city}${country}`} className="homes-item">
-        <img className="img-homes" src={imageUrl} />
-        <a className="text-homes" href="#">
-          {name}
-        </a>
-        <span className="text-country-homes">
-          {city}, {country}
-        </span>
+      <div id="available-hotels" className="available-hotels">
+        <div key={`${name}${city}${country}`} className="homes-item">
+          <img className="img-homes" src={imageUrl} />
+          <a className="text-homes" href="#">
+            {name}
+          </a>
+          <span className="text-country-homes">
+            {city}, {country}
+          </span>
+        </div>
       </div>
     ));
 
