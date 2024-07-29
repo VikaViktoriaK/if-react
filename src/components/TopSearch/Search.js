@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./TopSection.css";
+import "./Search.css";
 import "../HomesCard/Homes";
 import { hotelsData } from "../../assets/config";
 
