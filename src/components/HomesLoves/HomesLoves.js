@@ -1,6 +1,5 @@
 import React from "react";
 import "./HomesLoves.css";
-import { Container } from "../Container";
 
 export class HomesLoves extends React.Component {
   constructor(props) {
@@ -25,31 +24,29 @@ export class HomesLoves extends React.Component {
     const { homesLovesData } = this.state;
 
     return (
-      <Container>
-        <div className="homes-loves">
-          <h2>Homes guests loves</h2>
-          <div className="hr-heading"></div>
-          <div className="homes-group" id="homes-group">
-            {homesLovesData.length > 0 ? (
-              homesLovesData.map((item, index) => (
-                <div key={index} className="homes-item">
-                  <img
-                    className="img-homes"
-                    src={item.imageUrl}
-                    alt={item.name}
-                  />
-                  <span className="text-homes">{item.name}</span>
-                  <span className="text-country-homes">
-                    {item.city}, {item.country}
-                  </span>
-                </div>
-              ))
-            ) : (
-              <p>No data available</p>
-            )}
-          </div>
+      <div className="homes-loves">
+        <h2>Homes guests loves</h2>
+        <div className="hr-heading"></div>
+        <div className="homes-group" id="homes-group">
+          {homesLovesData.length > 0 ? (
+            homesLovesData.map((item, index) => (
+              <div key={index} className="homes-item">
+                <img
+                  className="img-homes"
+                  src={item.imageUrl}
+                  alt={item.name}
+                />
+                <span className="text-homes">{item.name}</span>
+                <span className="text-country-homes">
+                  {item.city}, {item.country}
+                </span>
+              </div>
+            ))
+          ) : (
+            <p>No data available</p>
+          )}
         </div>
-      </Container>
+      </div>
     );
   }
 }

@@ -1,7 +1,7 @@
 import React from "react";
-import "./TopSection.css";
+import { TopSearch } from "../TopSearch";
 
-const TopSection = () => {
+export const TopSection = () => {
   return (
     <div className="top-section">
       <div className="container">
@@ -24,7 +24,7 @@ const TopSection = () => {
             Discover stays <br />
             to live, work or just relax
           </h1>
-          <Search />
+          <TopSearch />
           <div className="apps">
             <a
               className="google"

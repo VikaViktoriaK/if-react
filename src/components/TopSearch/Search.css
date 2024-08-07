@@ -61,8 +61,9 @@ input {
 }
 
 .available-hotels {
-  background-color: #ffffff;
   display: flex;
+  flex-wrap: wrap;
+  background-color: #ffffff;
   margin: 0 16px;
   padding: 20px;
   gap: 10px;
@@ -79,7 +80,7 @@ input {
 
  {
   height: 100vh;
-  background-image: url("./images/castelmezzano.png");
+  background-image: url("../TopSection/images/castelmezzano.png");
   background-size: cover;
   background-repeat: no-repeat;
   margin: 0 auto;
@@ -103,7 +104,7 @@ input {
 .header-logo {
   height: 40px;
   width: 205px;
-  background-image: url("./images/logo-more.png");
+  background-image: url("../TopSection/images/logo-more.png");
   background-size: cover;
 }
 
@@ -163,7 +164,7 @@ input {
 .button-night {
   height: 40px;
   width: 30px;
-  background-image: url("./images/logo-more.png");
+  background-image: url("../TopSection/images/logo-more.png");
   background-size: cover;
   background-position-x: 71px;
   border: none;
@@ -174,7 +175,7 @@ input {
 .button-account {
   max-height: 40px;
   max-width: 40px;
-  background-image: url("./images/logo-more.png");
+  background-image: url("../TopSection/images/logo-more.png");
   width: 277px;
   height: 40px;
   background-size: cover;
@@ -200,7 +201,7 @@ input {
 .button-menu {
   width: 24px;
   height: 16px;
-  background-image: url("./images/menu.svg");
+  background-image: url("../TopSection/images/menu.svg");
   background-size: cover;
   background-position-x: 20px;
   border: none;
