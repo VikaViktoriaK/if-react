@@ -1,0 +1,44 @@
+.homes-loves {
+  background-color: #eaf0f9;
+}
+
+.homes-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  position: relative;
+  padding-bottom: 114px;
+  margin-top: 80px;
+  background-color: #eaf0f9;
+}
+
+.homes-item {
+  width: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.homes-ittext-country-homesem:nth-last-child(2n) {
+  display: flex;
+}
+
+.img-homes {
+  width: 296px;
+  height: 296px;
+}
+
+.text-homes {
+  font-size: 24px;
+  font-weight: 400;
+  color: #3077c6;
+  cursor: pointer;
+}
+
+. {
+  font-size: 24px;
+  font-weight: 400;
+  color: #bfbfbf;
+}
