@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Search.css";
+import { Calendar } from "../Сalendar";
 
 export const TopSearch = () => {
   const [findingString, setFindingString] = useState("");
@@ -74,15 +75,19 @@ export const TopSearch = () => {
             onChange={(event) => setFindingString(event.target.value)}
           />
         </div>
-        <div className="form-elements date form-desktop-edition">
-          <label htmlFor="date">Check-in — Check-out</label>
-          <input
-            name="date"
-            id="date"
-            type="text"
-            placeholder="Tue 15 Sept — Sat 19 Sept"
-          />
+        <div className="form-elements date ">
+          <Calendar></Calendar>
+          <Calendar></Calendar>
         </div>
+        {/*<div className="form-elements date form-desktop-edition">*/}
+        {/*<label htmlFor="date">Check-in — Check-out</label>*/}
+        {/*<input*/}
+        {/*  name="date"*/}
+        {/*  id="date"*/}
+        {/*  type="text"*/}
+        {/*  placeholder="Tue 15 Sept — Sat 19 Sept"*/}
+        {/*/>*/}
+        {/*</div>*/}
         <div className="form-mobile-edition">
           <div className="form-elements country">
             <input
