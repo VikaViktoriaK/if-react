@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./Search.css";
 import { Calendar } from "../Сalendar";
+import useHotelsSearch from "../../hooks/useHotelsSearch";
 
 export const TopSearch = () => {
   const [findingString, setFindingString] = useState("");
   const [findedHotels, setFindedHotels] = useState([]);
   const [hotels, setHotels] = useState([]);
+  const [loading, error] = useHotelsSearch(findHotels);
 
   const findHotelsByStr = (hotels, str) => {
     const foundLocations = [];
@@ -60,6 +62,18 @@ export const TopSearch = () => {
       })
       .catch((error) => console.error("Error fetching hotels:", error));
   }, []);
+
+  if (loading) {
+    return (
+      <div>
+        <img src="../../assets/images/loading.gif" />
+      </div>
+    );
+  }
+
+  if (error) {
+    return <span>Произошла ошибка...</span>;
+  }
 
   return (
     <>
