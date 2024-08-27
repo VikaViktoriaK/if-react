@@ -1,0 +1,46 @@
+.homes-item {
+  width: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.img-homes {
+  width: 296px;
+  height: 296px;
+}
+
+.text-homes {
+  font-size: 24px;
+  font-weight: 400;
+  color: #3077c6;
+  cursor: pointer;
+}
+
+.text-country-homes {
+  font-size: 24px;
+  font-weight: 400;
+  color: #bfbfbf;
+}
+
+.homes-button {
+  min-height: 50px;
+  min-width: 50px;
+  background-repeat: no-repeat;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  top: 130px;
+  right: -30px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.available-hotels {
+  display: flex;
+  margin: 0 16px;
+  padding: 20px;
+  gap: 10px;
+}

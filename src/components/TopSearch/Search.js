@@ -1,79 +1,34 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Search.css";
 import { Calendar } from "../Сalendar";
-import useHotelsSearch from "../../hooks/useHotelsSearch";
+import { Hotels } from "../Hotels";
+import loadingImg from "../../assets/images/loading.gif";
+
+const baseUrl = "https://if-student-api.onrender.com";
 
 export const TopSearch = () => {
-  const [findingString, setFindingString] = useState("");
-  const [findedHotels, setFindedHotels] = useState([]);
-  const [hotels, setHotels] = useState([]);
-  const [loading, error] = useHotelsSearch(findHotels);
+  const [searchString, setSearchString] = useState("");
+  const [foundHotels, setFoundHotels] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-  const findHotelsByStr = (hotels, str) => {
-    const foundLocations = [];
-
-    for (const hotel of hotels) {
-      if (
-        hotel.name.toLowerCase().includes(str) ||
-        hotel.city.toLowerCase().includes(str) ||
-        hotel.country.toLowerCase().includes(str)
-      ) {
-        foundLocations.push(hotel);
-      }
-    }
-
-    return foundLocations;
-  };
-
-  const createHotelsMarkUp = (data) =>
-    data.map(({ imageUrl, name, city, country }) => {
-      return (
-        <div
-          key={`${name}${city}${country}`}
-          id="available-hotels"
-          className="available-hotels"
-        >
-          <div className="homes-item">
-            <img className="img-homes" src={imageUrl} alt={name} />
-            <a className="text-homes" href="#">
-              {name}
-            </a>
-            <span className="text-country-homes">
-              {city}, {country}
-            </span>
-          </div>
-        </div>
-      );
-    });
-
-  const findHotels = (event) => {
+  const handleSearch = (event) => {
     event.preventDefault();
-    const foundHotels = findHotelsByStr(hotels, findingString.toLowerCase());
-    setFindedHotels(foundHotels);
-  };
 
-  useEffect(() => {
-    const baseUrl = "https://if-student-api.onrender.com/api/hotels";
-
-    fetch(`${baseUrl}/popular`)
-      .then((response) => response.json())
-      .then((data) => {
-        setHotels(data);
+    fetch(`${baseUrl}/api/hotels?search=${searchString}`)
+      .then((response) => {
+        setLoading(true);
+        return response.json();
       })
-      .catch((error) => console.error("Error fetching hotels:", error));
-  }, []);
-
-  if (loading) {
-    return (
-      <div>
-        <img src="../../assets/images/loading.gif" />
-      </div>
-    );
-  }
-
-  if (error) {
-    return <span>Произошла ошибка...</span>;
-  }
+      .then((foundHotels) => {
+        setFoundHotels(foundHotels);
+      })
+      .catch((err) => {
+        console.log("Fetch Error :-S", err);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  };
 
   return (
     <>
@@ -85,23 +40,14 @@ export const TopSearch = () => {
             id="country"
             type="text"
             placeholder="New York"
-            value={findingString}
-            onChange={(event) => setFindingString(event.target.value)}
+            value={searchString}
+            onChange={(event) => setSearchString(event.target.value)}
           />
         </div>
         <div className="form-elements date ">
-          <Calendar></Calendar>
-          <Calendar></Calendar>
+          <Calendar />
+          <Calendar />
         </div>
-        {/*<div className="form-elements date form-desktop-edition">*/}
-        {/*<label htmlFor="date">Check-in — Check-out</label>*/}
-        {/*<input*/}
-        {/*  name="date"*/}
-        {/*  id="date"*/}
-        {/*  type="text"*/}
-        {/*  placeholder="Tue 15 Sept — Sat 19 Sept"*/}
-        {/*/>*/}
-        {/*</div>*/}
         <div className="form-mobile-edition">
           <div className="form-elements country">
             <input
@@ -121,35 +67,25 @@ export const TopSearch = () => {
             </div>
           </div>
         </div>
-        <div className="form-mobile-edition">
-          <div className="filter-mobile">
-            <div className="form-elements adults">
-              <label htmlFor="adults">Adults</label>
-              <input id="adults" type="text" placeholder="2" />
-            </div>
-            <div className="form-elements form-children-border">
-              <label htmlFor="children">Children</label>
-              <input id="children" type="text" placeholder="0" />
-            </div>
-            <div className="form-elements">
-              <label htmlFor="room">Room</label>
-              <input id="room" type="text" placeholder="1" />
-            </div>
-          </div>
-        </div>
+        <div className="form-mobile-edition"></div>
         <div
           className="form-elements options form-desktop-edition"
           id="options-filter"
         >
           <input name="options" id="options-input" type="text" />
         </div>
-        <button className="form-button" id="form-button" onClick={findHotels}>
+        <button className="form-button" id="form-button" onClick={handleSearch}>
           Search
         </button>
       </form>
-      {!!findedHotels.length && (
+      {loading && (
+        <div>
+          <img src={loadingImg} alt="Loading..." />
+        </div>
+      )}
+      {!!foundHotels.length && (
         <div className="available-hotels">
-          {createHotelsMarkUp(findedHotels)}
+          <Hotels data={foundHotels} />
         </div>
       )}
     </>
