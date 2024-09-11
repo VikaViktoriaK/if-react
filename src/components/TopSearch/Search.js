@@ -3,6 +3,7 @@ import "./Search.css";
 import { Calendar } from "../Сalendar";
 import { Hotels } from "../Hotels";
 import loadingImg from "../../assets/images/loading.gif";
+import { Filter } from "../Filter";
 
 const baseUrl = "https://if-student-api.onrender.com";
 
@@ -10,6 +11,7 @@ export const TopSearch = () => {
   const [searchString, setSearchString] = useState("");
   const [foundHotels, setFoundHotels] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [filterActive, setFilterActive] = useState(false);
 
   const handleSearch = (event) => {
     event.preventDefault();
@@ -67,17 +69,33 @@ export const TopSearch = () => {
             </div>
           </div>
         </div>
-        <div className="form-mobile-edition"></div>
-        <div
-          className="form-elements options form-desktop-edition"
-          id="options-filter"
-        >
-          <input name="options" id="options-input" type="text" />
+        <div className="form-mobile-edition">
+          <div className="form-elements adults">
+            <label form="adults">Adults</label>
+            <input id="adults" type="text" placeholder="2" />
+          </div>
+          <div className="form-elements form-children-border">
+            <label form="children">Children</label>
+            <input id="children" type="text" placeholder="0" />
+          </div>
+          <div className="form-elements">
+            <label form="room">Room</label>
+            <input id="room" type="text" placeholder="1" />
+          </div>
+        </div>
+        <div className="form-elements options form-desktop-edition">
+          <input
+            name="options"
+            id="options-input"
+            type="text"
+            onClick={() => setFilterActive(true)}
+          />
         </div>
         <button className="form-button" id="form-button" onClick={handleSearch}>
           Search
         </button>
       </form>
+      <Filter active={filterActive} setActive={setFilterActive} />
       {loading && (
         <div>
           <img src={loadingImg} alt="Loading..." />
