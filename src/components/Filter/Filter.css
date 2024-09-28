@@ -11,7 +11,7 @@
 }
 
 .options-container-block {
-  margin-left: auto;
+  margin-right: 190px;
   padding: 8px 22px;
   border-radius: 8px;
   display: flex;
@@ -20,7 +20,10 @@
   width: 295px;
   background-color: #ffffff;
   top: 70px;
+  float: right;
 }
+
+
 
 .options-container {
   transform: scale(0);
@@ -34,6 +37,7 @@
   display: flex;
   align-items: center;
 }
+
 .options-text {
   font-size: 12px;
   line-height: 14px;

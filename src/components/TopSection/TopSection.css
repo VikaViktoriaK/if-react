@@ -1,9 +1,10 @@
 .top-section {
   height: 100vh;
-  background-image: url("./images/castelmezzano.png");
+  background-image: url("../../assets/images/castelmezzano.png");
   background-size: cover;
   background-repeat: no-repeat;
   margin: 0 auto;
+  padding-bottom: 100px;
   background-color: #a4bcec;
   display: flex;
   flex-direction: column;
@@ -16,16 +17,18 @@
   height: 40px;
   display: flex;
   gap: 16px;
-  margin: 0 auto;
+  margin: 120px;
+  justify-content: center;
+  align-items: center;
 }
 
 .google {
   width: 135px;
-  background-image: url("./images/apps.png");
+  background-image: url("../../assets/images/apps.png");
 }
 
 .app-store {
   width: 120px;
-  background-image: url("./images/apps.png");
+  background-image: url("../../assets/images/apps.png");
   background-position-x: 120px;
 }

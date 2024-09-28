@@ -1,10 +1,12 @@
 import React from "react";
 import { TopSearch } from "../TopSearch";
+import "./TopSection.css";
+import { Container } from "../Container";
 
 export const TopSection = () => {
   return (
     <div className="top-section">
-      <div className="container">
+      <Container>
         <header className="header">
           <div className="header-logo"></div>
           <div className="header-sections">
@@ -34,9 +36,9 @@ export const TopSection = () => {
               className="app-store"
               href="https://www.apple.com/ru/app-store/"
             ></a>
-          </div>{" "}
+          </div>
         </div>
-      </div>
+      </Container>
     </div>
   );
 };

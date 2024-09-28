@@ -1,15 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 
 // eslint-disable-next-line react/prop-types
-export const Counter = ({ maxValue, minValue = 0 }) => {
-  const [count, setCount] = useState(minValue);
-
-  const handleClick = (operation) => {
-    const newCount = count + (operation === "increment" ? 1 : -1);
-    if (newCount >= minValue && newCount <= maxValue) {
-      setCount(newCount);
-    }
-  };
+export const Counter = ({ maxValue, minValue = 0, count, setCount }) => {
+  // const handleClick = (operation) => {
+  //   const newCount = count + (operation === "increment" ? 1 : -1);
+  //   if (newCount >= minValue && newCount <= maxValue) {
+  //     setCount(newCount);
+  //   }
+  // };
 
   return (
     <>
@@ -18,7 +16,7 @@ export const Counter = ({ maxValue, minValue = 0 }) => {
           className="options-button options-minus-button_js"
           type="button"
           disabled={count === minValue}
-          onClick={() => handleClick("decrement")}
+          onClick={() => setCount(count - 1)}
         >
           -
         </button>
@@ -27,7 +25,7 @@ export const Counter = ({ maxValue, minValue = 0 }) => {
           className="options-button options-plus-button_js"
           type="button"
           disabled={count === maxValue}
-          onClick={() => handleClick("increment")}
+          onClick={() => setCount(count + 1)}
         >
           +
         </button>

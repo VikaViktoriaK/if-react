@@ -89,6 +89,7 @@ export const TopSearch = () => {
             id="options-input"
             type="text"
             onClick={() => setFilterActive(true)}
+            placeholder={`1 Adults — 3 Children — 1 Room`}
           />
         </div>
         <button className="form-button" id="form-button" onClick={handleSearch}>

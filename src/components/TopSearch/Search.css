@@ -60,13 +60,11 @@ input {
   margin: 0 auto;
 }
 
-.available-hotels {
-  display: flex;
-  flex-wrap: wrap;
-  background-color: #ffffff;
-  margin: 0 16px;
-  padding: 20px;
-  gap: 10px;
+.available-hotels-block {
+  background-color: #f5bd41;
+  /*display: flex;*/
+  /*flex-wrap: wrap;*/
+  /*gap: 10px;*/
 }
 
 .available-hotels-img {
@@ -80,7 +78,7 @@ input {
 
  {
   height: 100vh;
-  background-image: url("../TopSection/images/castelmezzano.png");
+  background-image: url("../../assets/images/castelmezzano.png");
   background-size: cover;
   background-repeat: no-repeat;
   margin: 0 auto;
@@ -215,7 +213,7 @@ input {
   border-radius: 8px;
   display: flex;
   margin-top: 150px;
-  margin-bottom: 50px;
+  margin-bottom: 15px;
 }
 
 .form-name {

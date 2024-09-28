@@ -40,7 +40,6 @@
 
 .available-hotels {
   display: flex;
-  margin: 0 16px;
-  padding: 20px;
   gap: 10px;
+  margin-bottom: 50px;
 }
