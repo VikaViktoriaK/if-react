@@ -1,36 +1,13 @@
 import React, { useState } from "react";
 import "./Search.css";
 import { Calendar } from "../Сalendar";
-import { Hotels } from "../Hotels";
-import loadingImg from "../../assets/images/loading.gif";
+// import loadingImg from "../../assets/images/loading.gif";
 import { Filter } from "../Filter";
 
-const baseUrl = "https://if-student-api.onrender.com";
-
-export const TopSearch = () => {
+export const TopSearch = ({ onSearch }) => {
   const [searchString, setSearchString] = useState("");
-  const [foundHotels, setFoundHotels] = useState([]);
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
   const [filterActive, setFilterActive] = useState(false);
-
-  const handleSearch = (event) => {
-    event.preventDefault();
-
-    fetch(`${baseUrl}/api/hotels?search=${searchString}`)
-      .then((response) => {
-        setLoading(true);
-        return response.json();
-      })
-      .then((foundHotels) => {
-        setFoundHotels(foundHotels);
-      })
-      .catch((err) => {
-        console.log("Fetch Error :-S", err);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  };
 
   return (
     <>
@@ -92,21 +69,20 @@ export const TopSearch = () => {
             placeholder={`1 Adults — 3 Children — 1 Room`}
           />
         </div>
-        <button className="form-button" id="form-button" onClick={handleSearch}>
+        <button
+          className="form-button"
+          id="form-button"
+          onClick={(event) => onSearch(event)}
+        >
           Search
         </button>
       </form>
       <Filter active={filterActive} setActive={setFilterActive} />
-      {loading && (
-        <div>
-          <img src={loadingImg} alt="Loading..." />
-        </div>
-      )}
-      {!!foundHotels.length && (
-        <div className="available-hotels">
-          <Hotels data={foundHotels} />
-        </div>
-      )}
+      {/*{loading && (*/}
+      {/*  <div>*/}
+      {/*    <img src={loadingImg} alt="Loading..." />*/}
+      {/*  </div>*/}
+      {/*)}*/}
     </>
   );
 };

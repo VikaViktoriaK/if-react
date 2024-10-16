@@ -1,14 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-// eslint-disable-next-line react/prop-types
 export const Counter = ({ maxValue, minValue = 0, count, setCount }) => {
-  // const handleClick = (operation) => {
-  //   const newCount = count + (operation === "increment" ? 1 : -1);
-  //   if (newCount >= minValue && newCount <= maxValue) {
-  //     setCount(newCount);
-  //   }
-  // };
-
   return (
     <>
       <div className="options-item-buttons">
@@ -32,4 +25,9 @@ export const Counter = ({ maxValue, minValue = 0, count, setCount }) => {
       </div>
     </>
   );
+};
+
+Counter.propTypes = {
+  maxValue: PropTypes.number,
+  minValue: PropTypes.number,
 };

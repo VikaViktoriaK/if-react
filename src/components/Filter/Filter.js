@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 import { Counter } from "../Counter/Counter";
 import "./Filter.css";
 import { OptionsChildAge } from "../OptionsChildAge";
 
-export const Filter = ({ active }) => {
+// eslint-disable-next-line react/display-name
+export const Filter = memo(({ active }) => {
   const [adults, setAdults] = useState(1);
   const [children, setChildren] = useState(0);
   const [rooms, setRooms] = useState(1);
@@ -56,4 +57,4 @@ export const Filter = ({ active }) => {
       </div>
     </>
   );
-};
+});

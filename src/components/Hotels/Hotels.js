@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./Hotels.css";
 
 export const Hotels = ({ data }) => {
@@ -19,4 +20,15 @@ export const Hotels = ({ data }) => {
       </div>
     </div>
   ));
+};
+
+Hotels.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      imageUrl: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      city: PropTypes.string.isRequired,
+      country: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
 };

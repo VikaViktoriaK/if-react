@@ -40,6 +40,12 @@
 
 .available-hotels {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   margin-bottom: 50px;
+}
+
+.find-hotels {
+  background-color: #f5bd41;
+  display: block;
 }
