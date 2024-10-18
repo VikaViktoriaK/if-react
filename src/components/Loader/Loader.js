@@ -1,5 +1,5 @@
 import React from "react";
-import loadingImg from "../../assets/images/loading.gif";
+import loadingImg from "../../assets/images/load.gif";
 
 export const Loader = ({ loading, children }) => {
   if (loading) {

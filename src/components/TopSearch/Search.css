@@ -61,10 +61,7 @@ input {
 }
 
 .available-hotels-block {
-  background-color: #f5bd41;
-  /*display: flex;*/
-  /*flex-wrap: wrap;*/
-  /*gap: 10px;*/
+  background-color: #ffffff;
 }
 
 .available-hotels-img {

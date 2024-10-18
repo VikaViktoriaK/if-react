@@ -2,6 +2,7 @@ import React from "react";
 import "./HomesLoves.css";
 import { Hotels } from "../Hotels";
 import { useHomesPosts } from "../../hooks/useHomesPosts";
+import HotelPage from "../../pages/HotelPage/HotelPage";
 
 export const HomesLoves = () => {
   const homesLovesData = useHomesPosts();
@@ -13,6 +14,7 @@ export const HomesLoves = () => {
       <div className="homes-group" id="homes-group">
         <Hotels data={homesLovesData} />
       </div>
+      <HotelPage />
     </div>
   );
 };

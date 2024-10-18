@@ -12,9 +12,7 @@ const App = () => {
     <div className="App">
       <TopSection />
       <AvailableHotels />
-      <Suspense fallback={<Loader />}>
-        <HomesLoves />
-      </Suspense>
+      <Suspense fallback={<Loader />}>{<HomesLoves />}</Suspense>
       <Footer />
     </div>
   );

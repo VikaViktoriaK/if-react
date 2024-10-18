@@ -42,7 +42,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 50px;
+  padding-bottom: 20px;
 }
 
 .find-hotels {
