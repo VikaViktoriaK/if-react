@@ -1,20 +1,23 @@
 import "./App.css";
-import React, { Suspense } from "react";
-import "./components/Container";
-import { HomesLoves } from "./components/HomesLoves";
-import { TopSection } from "./components/TopSection";
-import { Loader } from "./components/Loader";
-import Footer from "./components/Footer/Footer";
-import { AvailableHotels } from "./components/AvailabeHotels";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Registration } from "./pages/Registration";
+import React from "react";
+import { HomePage } from "./pages/HomePage";
+import { Container } from "./components/Container";
+import { Navbar } from "./components/Navbar";
 
 const App = () => {
   return (
-    <div className="App">
-      <TopSection />
-      <AvailableHotels />
-      <Suspense fallback={<Loader />}>{<HomesLoves />}</Suspense>
-      <Footer />
-    </div>
+    // eslint-disable-next-line react/react-in-jsx-scope
+    <BrowserRouter>
+      <Container>
+        <Navbar />
+      </Container>
+      <Routes>
+        <Route path="/registration" element={<Registration />} />
+        <Route path="/home-page" element={<HomePage />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
