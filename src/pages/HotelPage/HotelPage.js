@@ -1,23 +1,48 @@
 import React from "react";
-import { Container } from "../../components/Container";
 import "./HotelPage.css";
+import { useParams } from "react-router-dom";
+import useGetHotels from "../../hooks/useHotelDetails";
+import Footer from "../../components/Footer/Footer";
+import { Container } from "../../components/Container";
+import { Calendar } from "../../components/Сalendar";
 
 const HotelPage = () => {
+  const params = useParams();
+  const baseUrl = `https://if-student-api.onrender.com/api/hotels/${params.id}`;
+  const [foundHotel] = useGetHotels(baseUrl);
+
   return (
-    <div className="hotel-block">
-      <Container>
-        <div className="hotel-img">
-          <img
-            src="https://www.google.by/url?sa=i&url=https%3A%2F%2Fwww.minsk-hotel.net%2Fru%2Fproperty%2Feurope-hotel.html&psig=AOvVaw38G57sxw93YUn5Ez33Akwn&ust=1729193980970000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCPCGvdzTk4kDFQAAAAAdAAAAABAK"
-            alt=""
-          />
-        </div>
-        <div className="hotel-name-block">
-          <a href="#">Holel name</a>
-          <span>Hotel country</span>
-        </div>
-      </Container>
-    </div>
+    <>
+      <div>
+        {foundHotel && (
+          <div key={foundHotel.name} className="hotel-page-block">
+            <Container>
+              <div className="hotel-block">
+                <div>
+                  <img
+                    className="img-homes"
+                    src={foundHotel.imageUrl}
+                    alt={foundHotel.name}
+                  />
+                </div>
+                <div className="hotel-details-block">
+                  <h1 className="hotel-name">{foundHotel.name}</h1>
+                  <span className="text-hotel-country">
+                    {foundHotel.city}, {foundHotel.country}
+                  </span>
+                  <div className="calendar-block">
+                    <span className="select-text">Select dates</span>
+                    <Calendar />
+                    <Calendar />
+                  </div>
+                </div>
+              </div>
+            </Container>
+          </div>
+        )}
+      </div>
+      <Footer />
+    </>
   );
 };
 

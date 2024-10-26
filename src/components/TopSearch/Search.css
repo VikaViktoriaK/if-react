@@ -178,6 +178,7 @@ input {
   border: none;
   background-color: transparent;
   cursor: pointer;
+  position: relative;
 }
 
 .form-button {
@@ -202,6 +203,23 @@ input {
   border: none;
   background-color: transparent;
   display: none;
+}
+
+.dropdown-block {
+  background-color: white;
+  display: flex;
+  gap: 16px;
+  padding-left: 16px;
+  align-items: center;
+  width: 190px;
+  height: 50px;
+  position: absolute;
+  transform: translate(530%,130%)
+}
+
+.dropdown-link {
+  font-size: 20px;
+  color: #333333;
 }
 
 .form {

@@ -5,6 +5,7 @@ import React from "react";
 import { HomePage } from "./pages/HomePage";
 import { Container } from "./components/Container";
 import { Navbar } from "./components/Navbar";
+import HotelPage from "./pages/HotelPage/HotelPage";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
       <Routes>
         <Route path="/registration" element={<Registration />} />
         <Route path="/home-page" element={<HomePage />} />
+        <Route path="/hotels/:id" element={<HotelPage />} />
       </Routes>
     </BrowserRouter>
   );
