@@ -1,0 +1,36 @@
+.top-section {
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  background-color: #a4bcec;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-position: center 15%;
+}
+
+.apps {
+  width: 270px;
+  height: 40px;
+  display: flex;
+  gap: 16px;
+  margin: 120px;
+  justify-content: center;
+  align-items: center;
+}
+
+.google {
+  width: 135px;
+  background-image: url("../../assets/images/apps.png");
+}
+
+.app-store {
+  width: 120px;
+  background-image: url("../../assets/images/apps.png");
+  background-position-x: 120px;
+}
+
+.ah {
+  display: block;
+}
