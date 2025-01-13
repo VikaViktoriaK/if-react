@@ -17,7 +17,10 @@ const RegistrationForm = () => {
       setShowPopup(true);
       return;
     }
-    navigate("/home-page");
+
+    console.log(email);
+    console.log(password);
+    navigate("/");
   };
 
   return (
@@ -32,8 +35,10 @@ const RegistrationForm = () => {
               <label htmlFor="email">Email address</label>
               <input
                 className="reg-form-input"
+                name="email"
                 type="email"
                 id="email"
+                autoComplete="off"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
@@ -44,6 +49,7 @@ const RegistrationForm = () => {
                 className="reg-form-input"
                 type="password"
                 id="password"
+                autoComplete="off"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />

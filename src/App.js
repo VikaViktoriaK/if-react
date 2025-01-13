@@ -6,6 +6,8 @@ import { HomePage } from "./pages/HomePage";
 import { Container } from "./components/Container";
 import { Navbar } from "./components/Navbar";
 import HotelPage from "./pages/HotelPage/HotelPage";
+import { Provider } from "react-redux";
+import { store } from "./store";
 
 const App = () => {
   return (
@@ -14,11 +16,13 @@ const App = () => {
       <Container>
         <Navbar />
       </Container>
-      <Routes>
-        <Route path="/registration" element={<Registration />} />
-        <Route path="/home-page" element={<HomePage />} />
-        <Route path="/hotels/:id" element={<HotelPage />} />
-      </Routes>
+      <Provider store={store}>
+        <Routes>
+          <Route path="/registration" element={<Registration />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/hotels/:id" element={<HotelPage />} />
+        </Routes>
+      </Provider>
     </BrowserRouter>
   );
 };

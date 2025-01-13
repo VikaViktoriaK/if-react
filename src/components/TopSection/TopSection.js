@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./TopSection.css";
 import { Container } from "../Container";
 import { Calendar } from "../Сalendar";
 import { Filter } from "../Filter";
 import loadingImg from "../../assets/images/load.gif";
 import { Hotels } from "../Hotels";
-import "../TopSearch/Search.css";
+import { useSelector } from "react-redux";
+import { authStatuses } from "../../constants/authStatuses";
+import { useNavigate } from "react-router-dom";
 
 const baseUrl = "https://if-student-api.onrender.com";
 
@@ -14,6 +16,18 @@ export const TopSection = () => {
   const [foundHotels, setFoundHotels] = useState([]);
   const [loading, setLoading] = useState(false);
   const [filterActive, setFilterActive] = useState(false);
+
+  const loggedOut = useSelector(
+    (state) => state.auth.status !== authStatuses.loggedIn,
+  );
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (loggedOut) {
+      navigate("/registration");
+    }
+  }, [loggedOut, navigate]);
 
   const handleSearch = (event) => {
     event.preventDefault();
