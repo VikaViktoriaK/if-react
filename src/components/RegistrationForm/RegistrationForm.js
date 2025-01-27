@@ -1,6 +1,9 @@
 import React, { useState } from "react";
-import "./RegistrationForm.css";
 import { useNavigate } from "react-router-dom";
+import "./RegistrationForm.css";
+import { PATH } from "../../constants/path";
+import { useDispatch } from "react-redux";
+import { loginAction } from "../../store/actions";
 
 const RegistrationForm = () => {
   const [email, setEmail] = useState("");
@@ -8,6 +11,7 @@ const RegistrationForm = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [showPopup, setShowPopup] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch;
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -17,10 +21,8 @@ const RegistrationForm = () => {
       setShowPopup(true);
       return;
     }
-
-    console.log(email);
-    console.log(password);
-    navigate("/");
+    dispatch(loginAction);
+    navigate(PATH.index);
   };
 
   return (
