@@ -1,16 +1,16 @@
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { searchHotels } from "../store/actions/hotelsSearch.action";
 
-const useHotelSearch = (baseUrl) => {
-  const [foundHotels, setFoundHotels] = useState([]);
+const useHotelSearch = () => {
+  const dispatch = useDispatch();
+  const foundHotels = useSelector((state) => state.hotels.state);
+  const loading = useSelector((state) => state.hotels.loading);
 
   const handleSearch = (searchString) => {
-    fetch(`${baseUrl}/api/hotels?search=${searchString}`)
-      .then((response) => response.json())
-      .then(setFoundHotels)
-      .catch((err) => console.log("Fetch Error :-S", err));
+    dispatch(searchHotels(searchString));
   };
 
-  return [foundHotels, handleSearch];
+  return [foundHotels, loading, handleSearch];
 };
 
 export default useHotelSearch;

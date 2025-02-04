@@ -107,11 +107,7 @@ export const TopSection = () => {
                 placeholder={`1 Adults — 3 Children — 1 Room`} // Update dynamically if needed
               />
             </div>
-            <button
-              className="form-button"
-              id="form-button"
-              type="submit" // onClick replaced by type="submit" to simplify form submission
-            >
+            <button className="form-button" id="form-button" type="submit">
               Search
             </button>
           </form>

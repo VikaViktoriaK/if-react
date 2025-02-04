@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const useHotelSearch = (url) => {
+const useHotelDetails = (url) => {
   const [foundHotel, setFoundHotel] = useState([]);
 
   useEffect(() => {
@@ -24,4 +24,4 @@ const useHotelSearch = (url) => {
   return [foundHotel];
 };
 
-export default useHotelSearch;
+export default useHotelDetails;

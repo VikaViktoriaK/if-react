@@ -1,4 +1,5 @@
 import React, { memo, useState } from "react";
+import PropTypes from "prop-types";
 import { Counter } from "../Counter/Counter";
 import "./Filter.css";
 import { OptionsChildAge } from "../OptionsChildAge";
@@ -58,3 +59,7 @@ export const Filter = memo(({ active }) => {
     </>
   );
 });
+
+Filter.propTypes = {
+  active: PropTypes.bool.isRequired,
+};

@@ -8,19 +8,19 @@ import { Navbar } from "./components/Navbar";
 import HotelPage from "./pages/HotelPage/HotelPage";
 import { Provider } from "react-redux";
 import { store } from "./store";
+import { PATH } from "./constants/path";
 
 const App = () => {
   return (
-    // eslint-disable-next-line react/react-in-jsx-scope
     <BrowserRouter>
       <Container>
         <Navbar />
       </Container>
       <Provider store={store}>
         <Routes>
-          <Route path="/registration" element={<Registration />} />
-          <Route path="/" element={<HomePage />} />
-          <Route path="/hotels/:id" element={<HotelPage />} />
+          <Route path={PATH.login} element={<Registration />} />
+          <Route path={PATH.index} element={<HomePage />} />
+          <Route path={PATH.hotelById} element={<HotelPage />} />
         </Routes>
       </Provider>
     </BrowserRouter>

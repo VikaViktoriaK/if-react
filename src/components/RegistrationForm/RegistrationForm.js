@@ -11,7 +11,7 @@ const RegistrationForm = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [showPopup, setShowPopup] = useState(false);
   const navigate = useNavigate();
-  const dispatch = useDispatch;
+  const dispatch = useDispatch();
 
   const handleSubmit = (event) => {
     event.preventDefault();
