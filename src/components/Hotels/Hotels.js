@@ -2,11 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./Hotels.css";
 import { useNavigate } from "react-router-dom";
+import { useHomesPosts } from "../../hooks/useHomesPosts";
 
-export const Hotels = ({ data }) => {
+export const Hotels = () => {
   const router = useNavigate();
+  const homesLovesData = useHomesPosts();
 
-  return data.map(({ id, imageUrl, name, city, country }) => (
+  return homesLovesData.map(({ id, imageUrl, name, city, country }) => (
     <div
       key={`${name}${city}${country}`}
       id="available-hotels"
@@ -39,5 +41,5 @@ Hotels.propTypes = {
       city: PropTypes.string.isRequired,
       country: PropTypes.string.isRequired,
     }),
-  ).isRequired,
+  ),
 };

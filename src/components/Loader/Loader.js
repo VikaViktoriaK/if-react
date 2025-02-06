@@ -1,6 +1,8 @@
 import React from "react";
 import loadingImg from "../../assets/images/load.gif";
+import PropTypes from "prop-types";
 
+// eslint-disable-next-line react/prop-types
 export const Loader = ({ loading, children }) => {
   if (loading) {
     return (
@@ -10,4 +12,9 @@ export const Loader = ({ loading, children }) => {
     );
   }
   return children;
+};
+
+Loader.propTypes = {
+  loading: PropTypes.bool.isRequired,
+  children: PropTypes.node.isRequired,
 };

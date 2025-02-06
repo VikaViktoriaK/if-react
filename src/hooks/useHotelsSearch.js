@@ -3,8 +3,10 @@ import { searchHotels } from "../store/actions/hotelsSearch.action";
 
 const useHotelSearch = () => {
   const dispatch = useDispatch();
-  const foundHotels = useSelector((state) => state.hotels.state);
-  const loading = useSelector((state) => state.hotels.loading);
+  const { foundHotels, loading } = useSelector(({ hotels }) => ({
+    foundHotels: hotels.state,
+    loading: hotels.loading,
+  }));
 
   const handleSearch = (searchString) => {
     dispatch(searchHotels(searchString));

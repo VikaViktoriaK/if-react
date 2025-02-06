@@ -30,4 +30,6 @@ export const Counter = ({ maxValue, minValue = 0, count, setCount }) => {
 Counter.propTypes = {
   maxValue: PropTypes.number,
   minValue: PropTypes.number,
+  count: PropTypes.number,
+  setCount: PropTypes.func,
 };

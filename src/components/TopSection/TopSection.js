@@ -5,22 +5,21 @@ import { Calendar } from "../Сalendar";
 import { Filter } from "../Filter";
 import loadingImg from "../../assets/images/load.gif";
 import { Hotels } from "../Hotels";
-import { useDispatch, useSelector } from "react-redux";
-import { authStatuses } from "../../constants/authStatuses";
 import { useNavigate } from "react-router-dom";
-import { searchHotels } from "../../store/actions/hotelsSearch.action";
+import { authStatuses } from "../../constants/authStatuses";
+import useHotelSearch from "../../hooks/useHotelsSearch";
+import { useSelector } from "react-redux";
 
 export const TopSection = () => {
   const [searchString, setSearchString] = useState("");
   const [filterActive, setFilterActive] = useState(false);
 
-  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const loggedOut = useSelector(
     (state) => state.auth.status !== authStatuses.loggedIn,
-  ); // Update your auth selector accordingly
-  const { hotels, loading, error } = useSelector((state) => state);
+  );
 
-  const navigate = useNavigate();
+  const [foundHotels, loading, handleSearch] = useHotelSearch(); // Use the custom hook
 
   useEffect(() => {
     if (loggedOut) {
@@ -28,9 +27,9 @@ export const TopSection = () => {
     }
   }, [loggedOut, navigate]);
 
-  const handleSearch = (event) => {
+  const handleSearchSubmit = (event) => {
     event.preventDefault();
-    dispatch(searchHotels(searchString));
+    handleSearch(searchString); // Call handleSearch from the custom hook
   };
 
   return (
@@ -41,7 +40,7 @@ export const TopSection = () => {
             Discover stays <br />
             to live, work or just relax
           </h1>
-          <form className="form" id="form" onSubmit={handleSearch}>
+          <form className="form" id="form" onSubmit={handleSearchSubmit}>
             <div className="form-elements country form-desktop-edition">
               <label htmlFor="country">Your destination or hotel name</label>
               <input
@@ -104,7 +103,7 @@ export const TopSection = () => {
                 id="options-input"
                 type="text"
                 onClick={() => setFilterActive(true)}
-                placeholder={`1 Adults — 3 Children — 1 Room`} // Update dynamically if needed
+                placeholder={`1 Adults — 3 Children — 1 Room`}
               />
             </div>
             <button className="form-button" id="form-button" type="submit">
@@ -117,7 +116,6 @@ export const TopSection = () => {
               <img src={loadingImg} alt="Loading..." />
             </div>
           )}
-          {error && <div>Error: {error}</div>}
           <div className="apps">
             <a
               className="google"
@@ -130,12 +128,12 @@ export const TopSection = () => {
           </div>
         </div>
       </Container>
-      {hotels && (
+      {foundHotels && foundHotels.length > 0 && (
         <div className="available-hotels-block">
           <h2>Available hotels</h2>
           <Container>
             <div className="available-hotels">
-              <Hotels data={hotels} />
+              <Hotels data={foundHotels} />
             </div>
           </Container>
         </div>
