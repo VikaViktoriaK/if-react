@@ -10,7 +10,9 @@ export const INITIAL_STATE = {
     name: null,
   },
 
-  hotels: [],
-  loading: false,
-  error: null,
+  hotels: {
+    data: [],
+    loading: false,
+    error: null,
+  },
 };

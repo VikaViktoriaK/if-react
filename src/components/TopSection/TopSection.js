@@ -20,7 +20,6 @@ export const TopSection = () => {
   );
 
   const [foundHotels, loading, handleSearch] = useHotelSearch(); // Use the custom hook
-
   useEffect(() => {
     if (loggedOut) {
       navigate("/registration");

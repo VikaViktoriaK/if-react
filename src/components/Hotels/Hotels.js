@@ -2,13 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./Hotels.css";
 import { useNavigate } from "react-router-dom";
-import { useHomesPosts } from "../../hooks/useHomesPosts";
 
-export const Hotels = () => {
+export const Hotels = ({ data = [] }) => {
   const router = useNavigate();
-  const homesLovesData = useHomesPosts();
 
-  return homesLovesData.map(({ id, imageUrl, name, city, country }) => (
+  return data.map(({ id, imageUrl, name, city, country }) => (
     <div
       key={`${name}${city}${country}`}
       id="available-hotels"

@@ -19,7 +19,7 @@ export const rootReducer = (state = { ...INITIAL_STATE }, action) => {
     case "FETCH_HOTELS_SUCCESS":
       return {
         ...newState,
-        hotels: { ...newState.hotels, loading: false, hotels: action.payload },
+        hotels: { data: action.payload, loading: false, error: null },
       };
     case "FETCH_HOTELS_ERROR":
       return {
