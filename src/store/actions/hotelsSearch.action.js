@@ -1,18 +1,17 @@
-export const FETCH_HOTEL_REQUEST = "FETCH_HOTEL_REQUEST";
-export const FETCH_HOTELS_SUCCESS = "FETCH_HOTELS_SUCCESS";
-export const FETCH_HOTELS_ERROR = "FETCH_HOTELS_ERROR";
+import { HOTEL } from "../../constants/actionTypes";
 
 export const fetchHotelRequest = () => ({
-  type: FETCH_HOTEL_REQUEST,
+  type: HOTEL.request,
+  payload: null,
 });
 
 export const fetchHotelsSuccess = (hotels) => ({
-  type: FETCH_HOTELS_SUCCESS,
+  type: HOTEL.success,
   payload: hotels,
 });
 
 export const fetchHotelsError = (error) => ({
-  type: FETCH_HOTELS_ERROR,
+  type: HOTEL.error,
   payload: error,
 });
 

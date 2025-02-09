@@ -19,7 +19,7 @@ export const TopSection = () => {
     (state) => state.auth.status !== authStatuses.loggedIn,
   );
 
-  const [foundHotels, loading, handleSearch] = useHotelSearch(); // Use the custom hook
+  const [foundHotels, loading, handleSearch] = useHotelSearch();
   useEffect(() => {
     if (loggedOut) {
       navigate("/registration");
@@ -28,7 +28,7 @@ export const TopSection = () => {
 
   const handleSearchSubmit = (event) => {
     event.preventDefault();
-    handleSearch(searchString); // Call handleSearch from the custom hook
+    handleSearch(searchString);
   };
 
   return (
