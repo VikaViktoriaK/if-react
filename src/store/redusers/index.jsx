@@ -1,9 +1,9 @@
 import { INITIAL_STATE } from "../../constants/initialState";
 import { AUTH, USER } from "../../constants/actionTypes";
 import {
-  loginAction as FETCH_HOTELS_ERROR,
-  loginAction as FETCH_HOTELS_SUCCESS,
-  loginAction as FETCH_HOTEL_REQUEST,
+  FETCH_HOTELS_ERROR,
+  FETCH_HOTELS_REQUEST,
+  FETCH_HOTELS_SUCCESS,
 } from "../actions";
 
 export const rootReducer = (state = { ...INITIAL_STATE }, action) => {
@@ -16,7 +16,7 @@ export const rootReducer = (state = { ...INITIAL_STATE }, action) => {
       return newState;
     case USER.set:
       return { ...newState, user: action.payload };
-    case FETCH_HOTEL_REQUEST.payload:
+    case FETCH_HOTELS_REQUEST.payload:
       return {
         ...newState,
         hotels: { ...newState.hotels, loading: true, error: null },
