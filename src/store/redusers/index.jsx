@@ -1,10 +1,5 @@
 import { INITIAL_STATE } from "../../constants/initialState";
-import { AUTH, USER } from "../../constants/actionTypes";
-import {
-  FETCH_HOTELS_ERROR,
-  FETCH_HOTELS_REQUEST,
-  FETCH_HOTELS_SUCCESS,
-} from "../actions";
+import { AUTH, HOTELS, USER } from "../../constants/actionTypes";
 
 export const rootReducer = (state = { ...INITIAL_STATE }, action) => {
   const newState = structuredClone(state);
@@ -16,17 +11,17 @@ export const rootReducer = (state = { ...INITIAL_STATE }, action) => {
       return newState;
     case USER.set:
       return { ...newState, user: action.payload };
-    case FETCH_HOTELS_REQUEST.payload:
+    case HOTELS.request:
       return {
         ...newState,
-        hotels: { ...newState.hotels, loading: true, error: null },
+        hotels: { ...newState.hotels, loading: action.payload, error: null },
       };
-    case FETCH_HOTELS_SUCCESS.payload:
+    case HOTELS.success:
       return {
         ...newState,
         hotels: { data: action.payload, loading: false, error: null },
       };
-    case FETCH_HOTELS_ERROR.payload:
+    case HOTELS.error:
       return {
         ...newState,
         hotels: { ...newState.hotels, loading: false, error: action.payload },

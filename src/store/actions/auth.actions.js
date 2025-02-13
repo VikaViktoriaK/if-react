@@ -2,10 +2,6 @@ import { AUTH } from "../../constants/actionTypes";
 import { authStatuses } from "../../constants/authStatuses";
 import { createSlice } from "@reduxjs/toolkit";
 
-export const FETCH_HOTELS_ERROR = "FETCH_HOTELS_ERROR";
-export const FETCH_HOTELS_SUCCESS = "FETCH_HOTELS_SUCCESS";
-export const FETCH_HOTELS_REQUEST = "FETCH_HOTELS_REQUEST";
-
 export const loginAction = {
   type: AUTH.login,
   payload: authStatuses.loggedIn,

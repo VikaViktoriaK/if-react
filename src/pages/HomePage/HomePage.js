@@ -1,5 +1,5 @@
 import "../../App.css";
-import React, { useEffect } from "react";
+import React, { Suspense, useEffect } from "react";
 import "../../components/Container";
 import { TopSection } from "../../components/TopSection";
 import { AvailableHotels } from "../../components/AvailabeHotels";
@@ -37,7 +37,9 @@ export const HomePage = () => {
   return (
     <div className="App">
       <TopSection />
-      <AvailableHotels />
+      <Suspense fallback={<Loader loading />}>
+        <AvailableHotels />
+      </Suspense>
       <HomesLoves />
       <Footer />
     </div>
