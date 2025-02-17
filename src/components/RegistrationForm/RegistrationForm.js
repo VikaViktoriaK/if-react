@@ -1,11 +1,13 @@
+import "./RegistrationForm.css";
+
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./RegistrationForm.css";
-import { PATH } from "../../constants/path";
 import { useDispatch } from "react-redux";
+
+import { PATH } from "../../constants/path";
 import { loginAction } from "../../store/actions";
 
-const RegistrationForm = () => {
+export const RegistrationForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -74,5 +76,3 @@ const RegistrationForm = () => {
     </div>
   );
 };
-
-export default RegistrationForm;

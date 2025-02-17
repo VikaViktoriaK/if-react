@@ -1,10 +1,13 @@
-import React from "react";
 import "./HotelPage.css";
+
+import React from "react";
 import { useParams } from "react-router-dom";
+
 import useGetHotels from "../../hooks/useHotelDetails";
-import Footer from "../../components/Footer/Footer";
-import { Container } from "../../components/Container";
+
 import { Calendar } from "../../components/Сalendar";
+import { Container } from "../../components/Container";
+import { Footer } from "../../components/Footer";
 
 const HotelPage = () => {
   const params = useParams();

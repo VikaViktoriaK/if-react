@@ -1,14 +1,17 @@
-import React, { useEffect, useState } from "react";
 import "./TopSection.css";
-import { Container } from "../Container";
-import { Calendar } from "../Сalendar";
-import { Filter } from "../Filter";
 import loadingImg from "../../assets/images/load.gif";
-import { Hotels } from "../Hotels";
+
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 import { authStatuses } from "../../constants/authStatuses";
 import useHotelSearch from "../../hooks/useHotelsSearch";
-import { useSelector } from "react-redux";
+
+import { Calendar } from "../Сalendar";
+import { Container } from "../Container";
+import { Filter } from "../Filter";
+import { Hotels } from "../Hotels";
 
 export const TopSection = () => {
   const [searchString, setSearchString] = useState("");

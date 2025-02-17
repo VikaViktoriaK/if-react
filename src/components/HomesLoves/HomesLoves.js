@@ -1,5 +1,6 @@
-import React from "react";
 import "./HomesLoves.css";
+
+import React from "react";
 
 import { useHomesPosts } from "../../hooks/useHomesPosts";
 import { Hotels } from "../Hotels";

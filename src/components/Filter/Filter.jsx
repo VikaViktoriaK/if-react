@@ -1,7 +1,9 @@
-import React, { memo, useState } from "react";
-import PropTypes from "prop-types";
-import { Counter } from "../Counter/Counter";
 import "./Filter.css";
+
+import PropTypes from "prop-types";
+import React, { memo, useState } from "react";
+
+import { Counter } from "../Counter/Counter";
 import { OptionsChildAge } from "../OptionsChildAge";
 
 // eslint-disable-next-line react/display-name

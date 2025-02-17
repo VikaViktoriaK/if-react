@@ -1,6 +1,7 @@
-import React from "react";
 import loadingImg from "../../assets/images/load.gif";
+
 import PropTypes from "prop-types";
+import React from "react";
 
 // eslint-disable-next-line react/prop-types
 export const Loader = ({ loading, children }) => {

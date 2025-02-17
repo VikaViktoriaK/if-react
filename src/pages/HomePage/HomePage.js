@@ -1,14 +1,16 @@
 import "../../App.css";
+
 import React, { Suspense, useEffect } from "react";
-import "../../components/Container";
-import { TopSection } from "../../components/TopSection";
-import { AvailableHotels } from "../../components/AvailabeHotels";
-import { Loader } from "../../components/Loader";
-import { HomesLoves } from "../../components/HomesLoves";
-import Footer from "../../components/Footer/Footer";
-import { useSelector, useDispatch } from "react-redux";
-import { authStatuses } from "../../constants/authStatuses";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+
+import { AvailableHotels } from "../../components/AvailabeHotels";
+
+import { HomesLoves } from "../../components/HomesLoves";
+import { Loader } from "../../components/Loader";
+import { TopSection } from "../../components/TopSection";
+import { Footer } from "../../components/Footer";
+import { authStatuses } from "../../constants/authStatuses";
 import { PATH } from "../../constants/path";
 import { setLoading } from "../../store/actions";
 

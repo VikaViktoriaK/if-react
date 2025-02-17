@@ -1,6 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
 import "./Hotels.css";
+
+import PropTypes from "prop-types";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
 export const Hotels = ({ data = [] }) => {
