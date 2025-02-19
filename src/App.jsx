@@ -1,14 +1,15 @@
-import "./App.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Registration } from "./pages/Registration";
-import React from "react";
-import { HomePage } from "./pages/HomePage";
-import { Container } from "./components/Container";
-import { Navbar } from "./components/Navbar";
-import HotelPage from "./pages/HotelPage/HotelPage";
-import { Provider } from "react-redux";
-import { store } from "./store";
-import { PATH } from "./constants/path";
+import './App.css';
+import React from 'react';
+import { Provider } from 'react-redux';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+import { Container } from './components/Container';
+import { Navbar } from './components/Navbar';
+import { PATH } from './constants/path';
+import { HomePage } from './pages/HomePage';
+import HotelPage from './pages/HotelPage/HotelPage';
+import { Registration } from './pages/Registration';
+import { store } from './store';
 
 const App = () => {
   return (

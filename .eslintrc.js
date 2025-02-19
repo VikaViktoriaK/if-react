@@ -3,42 +3,43 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ["eslint:recommended", "plugin:react/recommended"],
+  extends: ['eslint:recommended', 'plugin:react/recommended'],
   overrides: [
     {
       env: {
         node: true,
       },
-      files: [".eslintrc.{js,cjs}"],
+      files: ['.eslintrc.{js,cjs}'],
       parserOptions: {
-        sourceType: "script",
+        sourceType: 'script',
       },
     },
   ],
   parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
+    ecmaVersion: 'latest',
+    sourceType: 'module',
   },
-  plugins: ["react", "import"],
+  plugins: ['react', 'import'],
   rules: {
-    "import/order": [
-      "error",
+    'import/order': [
+      'error',
       {
         groups: [
-          "builtin",
-          "external",
-          "internal",
-          "parent",
-          "sibling",
-          "index",
-          "object",
-          "type",
+          'builtin',
+          'external',
+          'internal',
+          'parent',
+          'sibling',
+          'index',
+          'object',
+          'type',
         ],
-        "newlines-between": "always",
-        alphabetize: { order: "asc", caseInsensitive: true },
-        pathGroupsExcludedImportTypes: ["builtin"],
+        'newlines-between': 'always',
+        alphabetize: { order: 'asc', caseInsensitive: true },
+        pathGroupsExcludedImportTypes: ['builtin'],
       },
     ],
-    "object-curly-spacing": ["error", "always"],
+    'object-curly-spacing': ['error', 'always'],
+    quotes: ['error', 'single'],
   },
 };

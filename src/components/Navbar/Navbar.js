@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-import { Container } from "../Container";
+import { Container } from '../Container';
 
 export const Navbar = () => {
   const [dropdown, setDropdown] = useState(false);

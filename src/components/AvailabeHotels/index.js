@@ -1,1 +1,1 @@
-export * from "./AvailableHotels";
+export * from './AvailableHotels';

@@ -1,1 +1,1 @@
-export * from "./OptionsChildAge";
+export * from './OptionsChildAge';

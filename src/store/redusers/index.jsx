@@ -1,5 +1,5 @@
-import { INITIAL_STATE } from "../../constants/initialState";
-import { AUTH, HOTELS, USER } from "../../constants/actionTypes";
+import { AUTH, HOTELS, USER } from '../../constants/actionTypes';
+import { INITIAL_STATE } from '../../constants/initialState';
 
 export const rootReducer = (state = { ...INITIAL_STATE }, action) => {
   const newState = structuredClone(state);

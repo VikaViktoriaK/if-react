@@ -1,8 +1,8 @@
-import "./Hotels.css";
+import './Hotels.css';
 
-import PropTypes from "prop-types";
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import PropTypes from 'prop-types';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export const Hotels = ({ data = [] }) => {
   const router = useNavigate();

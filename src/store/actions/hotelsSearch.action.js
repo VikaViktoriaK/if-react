@@ -1,4 +1,4 @@
-import { HOTELS } from "../../constants/actionTypes";
+import { HOTELS } from '../../constants/actionTypes';
 
 export const fetchHotelRequest = (loading) => ({
   type: HOTELS.request,

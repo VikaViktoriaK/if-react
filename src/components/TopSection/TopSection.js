@@ -1,20 +1,19 @@
-import "./TopSection.css";
-import loadingImg from "../../assets/images/load.gif";
+import './TopSection.css';
 
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
-import { authStatuses } from "../../constants/authStatuses";
-import useHotelSearch from "../../hooks/useHotelsSearch";
-
-import { Calendar } from "../Сalendar";
-import { Container } from "../Container";
-import { Filter } from "../Filter";
-import { Hotels } from "../Hotels";
+import loadingImg from '../../assets/images/load.gif';
+import { authStatuses } from '../../constants/authStatuses';
+import useHotelSearch from '../../hooks/useHotelsSearch';
+import { Container } from '../Container';
+import { Filter } from '../Filter';
+import { Hotels } from '../Hotels';
+import { Calendar } from '../Сalendar';
 
 export const TopSection = () => {
-  const [searchString, setSearchString] = useState("");
+  const [searchString, setSearchString] = useState('');
   const [filterActive, setFilterActive] = useState(false);
 
   const navigate = useNavigate();
@@ -25,7 +24,7 @@ export const TopSection = () => {
   const [foundHotels, loading, handleSearch] = useHotelSearch();
   useEffect(() => {
     if (loggedOut) {
-      navigate("/registration");
+      navigate('/registration');
     }
   }, [loggedOut, navigate]);
 
@@ -105,7 +104,7 @@ export const TopSection = () => {
                 id="options-input"
                 type="text"
                 onClick={() => setFilterActive(true)}
-                placeholder={`1 Adults — 3 Children — 1 Room`}
+                placeholder={'1 Adults — 3 Children — 1 Room'}
               />
             </div>
             <button className="form-button" id="form-button" type="submit">

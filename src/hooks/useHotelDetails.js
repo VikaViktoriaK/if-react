@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-const useHotelDetails = (url) => {
+export const useHotelDetails = (url) => {
   const [foundHotel, setFoundHotel] = useState([]);
 
   useEffect(() => {
@@ -11,10 +11,10 @@ const useHotelDetails = (url) => {
           const data = await response.json();
           setFoundHotel(data);
         } else {
-          console.error("Error fetching data:", response.statusText);
+          console.error('Error fetching data:', response.statusText);
         }
       } catch (error) {
-        console.error("Fetch error:", error);
+        console.error('Fetch error:', error);
       }
     };
 
@@ -23,5 +23,3 @@ const useHotelDetails = (url) => {
 
   return [foundHotel];
 };
-
-export default useHotelDetails;

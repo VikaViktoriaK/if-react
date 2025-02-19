@@ -1,18 +1,17 @@
-import "../../App.css";
+import '../../App.css';
 
-import React, { Suspense, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import React, { Suspense, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
-import { AvailableHotels } from "../../components/AvailabeHotels";
-
-import { HomesLoves } from "../../components/HomesLoves";
-import { Loader } from "../../components/Loader";
-import { TopSection } from "../../components/TopSection";
-import { Footer } from "../../components/Footer";
-import { authStatuses } from "../../constants/authStatuses";
-import { PATH } from "../../constants/path";
-import { setLoading } from "../../store/actions";
+import { AvailableHotels } from '../../components/AvailabeHotels';
+import { Footer } from '../../components/Footer';
+import { HomesLoves } from '../../components/HomesLoves';
+import { Loader } from '../../components/Loader';
+import { TopSection } from '../../components/TopSection';
+import { authStatuses } from '../../constants/authStatuses';
+import { PATH } from '../../constants/path';
+import { setLoading } from '../../store/actions';
 
 export const HomePage = () => {
   const dispatch = useDispatch();

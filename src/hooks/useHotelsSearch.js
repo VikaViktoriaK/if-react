@@ -1,5 +1,6 @@
-import { useDispatch, useSelector } from "react-redux";
-import { searchHotels } from "../store/actions/hotelsSearch.action";
+import { useDispatch, useSelector } from 'react-redux';
+
+import { searchHotels } from '../store/actions/hotelsSearch.action';
 
 const useHotelSearch = () => {
   const dispatch = useDispatch();

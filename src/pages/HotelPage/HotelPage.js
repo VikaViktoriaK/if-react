@@ -1,18 +1,17 @@
-import "./HotelPage.css";
+import './HotelPage.css';
 
-import React from "react";
-import { useParams } from "react-router-dom";
+import React from 'react';
+import { useParams } from 'react-router-dom';
 
-import useGetHotels from "../../hooks/useHotelDetails";
-
-import { Calendar } from "../../components/Сalendar";
-import { Container } from "../../components/Container";
-import { Footer } from "../../components/Footer";
+import { Container } from '../../components/Container';
+import { Footer } from '../../components/Footer';
+import { Calendar } from '../../components/Сalendar';
+import { useHotelDetails } from '../../hooks/useHotelDetails';
 
 const HotelPage = () => {
   const params = useParams();
   const baseUrl = `https://if-student-api.onrender.com/api/hotels/${params.id}`;
-  const [foundHotel] = useGetHotels(baseUrl);
+  const [foundHotel] = useHotelDetails(baseUrl);
 
   return (
     <>

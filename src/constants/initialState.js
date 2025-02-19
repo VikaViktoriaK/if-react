@@ -1,4 +1,4 @@
-import { authStatuses } from "./authStatuses";
+import { authStatuses } from './authStatuses';
 
 export const INITIAL_STATE = {
   auth: {

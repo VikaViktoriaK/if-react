@@ -1,1 +1,1 @@
-export * from "./Сalendar";
+export * from './Сalendar';

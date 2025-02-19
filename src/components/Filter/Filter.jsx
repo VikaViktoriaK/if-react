@@ -1,10 +1,10 @@
-import "./Filter.css";
+import './Filter.css';
 
-import PropTypes from "prop-types";
-import React, { memo, useState } from "react";
+import PropTypes from 'prop-types';
+import React, { memo, useState } from 'react';
 
-import { Counter } from "../Counter/Counter";
-import { OptionsChildAge } from "../OptionsChildAge";
+import { Counter } from '../Counter/Counter';
+import { OptionsChildAge } from '../OptionsChildAge';
 
 // eslint-disable-next-line react/display-name
 export const Filter = memo(({ active }) => {
@@ -15,7 +15,7 @@ export const Filter = memo(({ active }) => {
   return (
     <>
       <div
-        className={active ? "options-container.active" : "options-container"}
+        className={active ? 'options-container.active' : 'options-container'}
       >
         <div className="options-container-block">
           <div className="options-items" id="options-items">

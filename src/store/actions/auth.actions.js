@@ -1,6 +1,7 @@
-import { AUTH } from "../../constants/actionTypes";
-import { authStatuses } from "../../constants/authStatuses";
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
+
+import { AUTH } from '../../constants/actionTypes';
+import { authStatuses } from '../../constants/authStatuses';
 
 export const loginAction = {
   type: AUTH.login,
@@ -13,7 +14,7 @@ export const logoutAction = {
 };
 
 export const authSlice = createSlice({
-  name: "auth",
+  name: 'auth',
   initialState: {
     status: authStatuses.loggedOut,
     loading: false,

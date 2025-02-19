@@ -1,16 +1,16 @@
-import "./RegistrationForm.css";
+import './RegistrationForm.css';
 
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
-import { PATH } from "../../constants/path";
-import { loginAction } from "../../store/actions";
+import { PATH } from '../../constants/path';
+import { loginAction } from '../../store/actions';
 
 export const RegistrationForm = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
   const [showPopup, setShowPopup] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -19,7 +19,7 @@ export const RegistrationForm = () => {
     event.preventDefault();
 
     if (!email || !password) {
-      setErrorMessage("Please enter both email and password");
+      setErrorMessage('Please enter both email and password');
       setShowPopup(true);
       return;
     }

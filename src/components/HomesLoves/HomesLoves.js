@@ -1,9 +1,9 @@
-import "./HomesLoves.css";
+import './HomesLoves.css';
 
-import React from "react";
+import React from 'react';
 
-import { useHomesPosts } from "../../hooks/useHomesPosts";
-import { Hotels } from "../Hotels";
+import { useHomesPosts } from '../../hooks/useHomesPosts';
+import { Hotels } from '../Hotels';
 
 export const HomesLoves = () => {
   const homesLovesData = useHomesPosts();
