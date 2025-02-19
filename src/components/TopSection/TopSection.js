@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 import loadingImg from '../../assets/images/load.gif';
 import { authStatuses } from '../../constants/authStatuses';
-import useHotelSearch from '../../hooks/useHotelsSearch';
+import { useHotelSearch } from '../../hooks/useHotelsSearch';
 import { Container } from '../Container';
 import { Filter } from '../Filter';
 import { Hotels } from '../Hotels';
