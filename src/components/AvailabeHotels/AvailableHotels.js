@@ -1,6 +1,6 @@
 import React from 'react';
 
-import useHotelSearch from '../../hooks/useHotelsSearch';
+import { useHotelSearch } from '../../hooks/useHotelsSearch';
 import { Hotels } from '../Hotels';
 
 export const AvailableHotels = () => {
