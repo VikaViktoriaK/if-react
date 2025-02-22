@@ -1,13 +1,11 @@
-import './Hotels.css';
-
 import PropTypes from 'prop-types';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export const Hotels = ({ data = [] }) => {
+export const HotelItem = ({ id, imageUrl, name, city, country }) => {
   const router = useNavigate();
 
-  return data.map(({ id, imageUrl, name, city, country }) => (
+  return (
     <div
       key={`${name}${city}${country}`}
       id="available-hotels"
@@ -29,16 +27,13 @@ export const Hotels = ({ data = [] }) => {
         </span>
       </div>
     </div>
-  ));
+  );
 };
 
-Hotels.propTypes = {
-  data: PropTypes.arrayOf(
-    PropTypes.shape({
-      imageUrl: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      city: PropTypes.string.isRequired,
-      country: PropTypes.string.isRequired,
-    }),
-  ),
+HotelItem.propTypes = {
+  id: PropTypes.string.isRequired,
+  imageUrl: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  city: PropTypes.string.isRequired,
+  country: PropTypes.string.isRequired,
 };

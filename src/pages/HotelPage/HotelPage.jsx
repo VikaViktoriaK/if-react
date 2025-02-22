@@ -8,7 +8,7 @@ import { Footer } from '../../components/Footer';
 import { Calendar } from '../../components/Сalendar';
 import { useHotelDetails } from '../../hooks/useHotelDetails';
 
-const HotelPage = () => {
+export const HotelPage = () => {
   const params = useParams();
   const baseUrl = `https://if-student-api.onrender.com/api/hotels/${params.id}`;
   const [foundHotel] = useHotelDetails(baseUrl);
@@ -47,5 +47,3 @@ const HotelPage = () => {
     </>
   );
 };
-
-export default HotelPage;

@@ -3,10 +3,9 @@ import './Filter.css';
 import PropTypes from 'prop-types';
 import React, { memo, useState } from 'react';
 
-import { Counter } from '../Counter/Counter';
+import { Counter } from '../Counter';
 import { OptionsChildAge } from '../OptionsChildAge';
 
-// eslint-disable-next-line react/display-name
 export const Filter = memo(({ active }) => {
   const [adults, setAdults] = useState(1);
   const [children, setChildren] = useState(0);
@@ -15,7 +14,7 @@ export const Filter = memo(({ active }) => {
   return (
     <>
       <div
-        className={active ? 'options-container.active' : 'options-container'}
+        className={active ? 'options-container active' : 'options-container'}
       >
         <div className="options-container-block">
           <div className="options-items" id="options-items">
@@ -61,6 +60,8 @@ export const Filter = memo(({ active }) => {
     </>
   );
 });
+
+Filter.displayName = 'Filter';
 
 Filter.propTypes = {
   active: PropTypes.bool.isRequired,

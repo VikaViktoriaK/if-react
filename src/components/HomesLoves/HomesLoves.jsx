@@ -1,4 +1,4 @@
-import './HomesLoves.css';
+import './HomesLoves.css'
 
 import React from 'react';
 

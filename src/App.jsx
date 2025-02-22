@@ -7,11 +7,11 @@ import { Container } from './components/Container';
 import { Navbar } from './components/Navbar';
 import { PATH } from './constants/path';
 import { HomePage } from './pages/HomePage';
-import HotelPage from './pages/HotelPage/HotelPage';
+import { HotelPage } from './pages/HotelPage/HotelPage';
 import { Registration } from './pages/Registration';
 import { store } from './store';
 
-const App = () => {
+export const App = () => {
   return (
     <BrowserRouter>
       <Container>
@@ -27,5 +27,3 @@ const App = () => {
     </BrowserRouter>
   );
 };
-
-export default App;

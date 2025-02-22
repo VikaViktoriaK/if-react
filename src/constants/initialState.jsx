@@ -9,7 +9,6 @@ export const INITIAL_STATE = {
     email: null,
     name: null,
   },
-
   hotels: {
     data: [],
     loading: false,

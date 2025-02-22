@@ -23,8 +23,6 @@
   float: right;
 }
 
-
-
 .options-container {
   transform: scale(0);
 }
@@ -42,19 +40,23 @@
   font-size: 12px;
   line-height: 14px;
 }
+
 .options-items {
   display: flex;
   flex-direction: column;
   row-gap: 12px;
 }
+
 .options-item {
   display: flex;
   justify-content: space-between;
 }
+
 .options-item-buttons {
   display: flex;
   column-gap: 20px;
 }
+
 .options-button {
   color: #3077c6;
   font-size: 18px;
@@ -65,10 +67,12 @@
   transform: none;
   user-select: none;
 }
+
 .options-button:disabled {
   color: #cecece;
   border: 1px solid #cecece;
 }
+
 .options-button :disabled {
   color: #3077c6;
   font-size: 18px;
@@ -78,10 +82,12 @@
   cursor: pointer;
   transform: none;
 }
+
 .options-child-age-select {
   border: 1px solid #3077c6;
   padding: 4px 8px;
 }
+
 .options-counter-number {
   margin-top: 5px;
 }
