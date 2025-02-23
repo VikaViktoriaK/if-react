@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-
-import { fetchHotelRequest, fetchHotelsError, fetchHotelsSuccess } from '../store/actions/hotelsSearch.action';
+import { hotelsError, hotelsRequest, hotelsSuccess } from '../store/actions/hotelsSearch.action';
 
 export const useHotelSearch = () => {
   const dispatch = useDispatch();
@@ -10,17 +9,17 @@ export const useHotelSearch = () => {
   }));
 
   const handleSearch = async (searchString) => {
-    dispatch(fetchHotelRequest(true));
+    dispatch(hotelsRequest(true));
     try {
       const response = await fetch(
-        `https://if-student-api.onrender.com/api/hotels?search=${searchString}`,
+        `https://if-student-api.onrender.com/api/hotels?search=${searchString}`
       );
       const data = await response.json();
-      dispatch(fetchHotelsSuccess(data));
+      dispatch(hotelsSuccess(data));
     } catch (error) {
-      dispatch(fetchHotelsError(error));
+      dispatch(hotelsError(error));
     } finally {
-      dispatch(fetchHotelRequest(false));
+      dispatch(hotelsRequest(false));
     }
   };
 

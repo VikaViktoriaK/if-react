@@ -19,7 +19,13 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', 'import'],
+  plugins: [
+    'react',
+    'import',
+    async () => ({
+      ...await import('@stylistic/eslint-plugin-js')
+    })
+  ],
   rules: {
     'import/order': [
       'error',
@@ -41,5 +47,6 @@ module.exports = {
     ],
     'object-curly-spacing': ['error', 'always'],
     quotes: ['error', 'single'],
+    '@stylistic/js/indent': ['error', 2],
   },
 };

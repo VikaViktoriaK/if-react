@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import './HotelItem.css'
 
 export const HotelItem = ({ id, imageUrl, name, city, country }) => {
   const router = useNavigate();

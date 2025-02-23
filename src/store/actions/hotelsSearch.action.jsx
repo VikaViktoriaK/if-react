@@ -1,16 +1,16 @@
-import { HOTELS } from '../../constants/actionTypes';
+import { HOTELS_ACTION } from './action.types';
 
-export const fetchHotelRequest = (loading) => ({
-  type: HOTELS.request,
-  payload: loading,
+export const hotelsRequest = (payload) => ({
+  type: HOTELS_ACTION.REQUEST,
+  payload,
 });
 
-export const fetchHotelsSuccess = (hotels) => ({
-  type: HOTELS.success,
-  payload: hotels,
+export const hotelsSuccess = (payload) => ({
+  type: HOTELS_ACTION.SUCCESS,
+  payload,
 });
 
-export const fetchHotelsError = (error) => ({
-  type: HOTELS.error,
-  payload: error.message,
+export const hotelsError = (payload) => ({
+  type: HOTELS_ACTION.ERROR,
+  payload,
 });

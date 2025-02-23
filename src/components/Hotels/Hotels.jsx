@@ -1,4 +1,4 @@
-import './Hotels.css';
+import '../HotelItem/HotelItem.css';
 
 import PropTypes from 'prop-types';
 import React from 'react';
