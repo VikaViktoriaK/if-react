@@ -22,9 +22,7 @@ module.exports = {
   plugins: [
     'react',
     'import',
-    async () => ({
-      ...await import('@stylistic/eslint-plugin-js')
-    })
+    require('@stylistic/eslint-plugin-js')
   ],
   rules: {
     'import/order': [
@@ -48,5 +46,8 @@ module.exports = {
     'object-curly-spacing': ['error', 'always'],
     quotes: ['error', 'single'],
     '@stylistic/js/indent': ['error', 2],
+  },
+  linterOptions: {
+    reportUnusedDisableDirectives: 'error',
   },
 };
