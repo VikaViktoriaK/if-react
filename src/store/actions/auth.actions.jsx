@@ -1,7 +1,6 @@
-import { createSlice } from '@reduxjs/toolkit';
-
 import { AUTH } from '../../constants/actionTypes';
 import { authStatuses } from '../../constants/authStatuses';
+import { createSlice } from '@reduxjs/toolkit';
 
 export const loginAction = {
   type: AUTH.login,
@@ -25,5 +24,6 @@ export const authSlice = createSlice({
     },
   },
 });
+
 
 export const { setLoading } = authSlice.actions;
