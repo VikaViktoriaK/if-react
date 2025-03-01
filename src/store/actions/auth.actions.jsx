@@ -1,6 +1,6 @@
 import { AUTH } from '../../constants/actionTypes';
 import { authStatuses } from '../../constants/authStatuses';
-import { createSlice } from '@reduxjs/toolkit';
+import { authSlice } from '../slices/auth.slice';
 
 export const loginAction = {
   type: AUTH.login,
@@ -11,19 +11,5 @@ export const logoutAction = {
   type: AUTH.logout,
   payload: authStatuses.loggedOut,
 };
-
-export const authSlice = createSlice({
-  name: 'auth',
-  initialState: {
-    status: authStatuses.loggedOut,
-    loading: false,
-  },
-  reducers: {
-    setLoading: (state, action) => {
-      state.loading = action.payload;
-    },
-  },
-});
-
 
 export const { setLoading } = authSlice.actions;
