@@ -6,14 +6,22 @@ import { useNavigate } from 'react-router-dom';
 
 import loadingImg from '../../assets/images/load.gif';
 import { authStatuses } from '../../constants/authStatuses';
-import { useHotelSearch } from '../../hooks/useHotelsSearch';
 import { Container } from '../Container';
 import { Filter } from '../Filter';
 import { Hotels } from '../Hotels';
 import { Calendar } from '../Сalendar';
+import { useSearchHotelsQuery } from '../../requests/searchRequest';
+
 
 export const TopSection = () => {
-  const [searchString, setSearchString] = useState('');
+  const [searchParams, setSearchParams] = useState({
+    search: '',
+    dateFrom: '',
+    dateTo: '',
+    adults: 1,
+    children: 0,
+    rooms: 1,
+  });
   const [filterActive, setFilterActive] = useState(false);
 
   const navigate = useNavigate();
@@ -21,16 +29,21 @@ export const TopSection = () => {
     (state) => state.auth.status !== authStatuses.loggedIn,
   );
 
-  const [foundHotels, loading, handleSearch] = useHotelSearch();
+  const { data: foundHotels, isLoading } = useSearchHotelsQuery(searchParams);
+
   useEffect(() => {
     if (loggedOut) {
       navigate('/registration');
     }
   }, [loggedOut, navigate]);
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setSearchParams((prev) => ({ ...prev, [name]: value }));
+  };
+
   const handleSearchSubmit = (event) => {
     event.preventDefault();
-    handleSearch(searchString);
   };
 
   return (
@@ -43,14 +56,14 @@ export const TopSection = () => {
           </h1>
           <form className="form" id="form" onSubmit={handleSearchSubmit}>
             <div className="form-elements country form-desktop-edition">
-              <label htmlFor="country">Your destination or hotel name</label>
+              <label htmlFor="search">Your destination or hotel name</label>
               <input
-                name="country"
-                id="country"
+                name="search"
+                id="search"
                 type="text"
                 placeholder="New York"
-                value={searchString}
-                onChange={(event) => setSearchString(event.target.value)}
+                value={searchParams.search}
+                onChange={handleChange}
               />
             </div>
             <div className="form-elements date">
@@ -63,23 +76,29 @@ export const TopSection = () => {
                   className="input-country"
                   type="text"
                   placeholder="Your destination or hotel name"
+                  value={searchParams.search}
+                  onChange={handleChange}
                 />
               </div>
               <div className="date-mobile">
                 <div className="form-elements">
-                  <label htmlFor="date-in">Check-in date</label>
+                  <label htmlFor="dateFrom">Check-in date</label>
                   <input
-                    id="date-in"
-                    type="text"
-                    placeholder="Tue 15 Sept 2020"
+                    id="dateFrom"
+                    name="dateFrom"
+                    type="date"
+                    value={searchParams.dateFrom}
+                    onChange={handleChange}
                   />
                 </div>
                 <div className="form-elements">
-                  <label htmlFor="date-out">Check-out date</label>
+                  <label htmlFor="dateTo">Check-out date</label>
                   <input
-                    id="date-out"
-                    type="text"
-                    placeholder="Sat 19 Sept 2020"
+                    id="dateTo"
+                    name="dateTo"
+                    type="date"
+                    value={searchParams.dateTo}
+                    onChange={handleChange}
                   />
                 </div>
               </div>
@@ -87,15 +106,36 @@ export const TopSection = () => {
             <div className="form-mobile-edition">
               <div className="form-elements adults">
                 <label htmlFor="adults">Adults</label>
-                <input id="adults" type="text" placeholder="2" />
+                <input
+                  id="adults"
+                  name="adults"
+                  type="number"
+                  min="1"
+                  value={searchParams.adults}
+                  onChange={handleChange}
+                />
               </div>
               <div className="form-elements form-children-border">
                 <label htmlFor="children">Children</label>
-                <input id="children" type="text" placeholder="0" />
+                <input
+                  id="children"
+                  name="children"
+                  type="number"
+                  min="0"
+                  value={searchParams.children}
+                  onChange={handleChange}
+                />
               </div>
               <div className="form-elements">
-                <label htmlFor="room">Room</label>
-                <input id="room" type="text" placeholder="1" />
+                <label htmlFor="rooms">Room</label>
+                <input
+                  id="rooms"
+                  name="rooms"
+                  type="number"
+                  min="1"
+                  value={searchParams.rooms}
+                  onChange={handleChange}
+                />
               </div>
             </div>
             <div className="form-elements options form-desktop-edition">
@@ -112,7 +152,7 @@ export const TopSection = () => {
             </button>
           </form>
           <Filter active={filterActive} setActive={setFilterActive} />
-          {loading && (
+          {isLoading && (
             <div>
               <img src={loadingImg} alt="Loading..." />
             </div>
