@@ -20,22 +20,14 @@
     "web-vitals": "^4.2.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "lint": "eslint ./src"
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test"
   },
   "husky": {
     "hooks": {
       "pre-commit": "npm run lint"
     }
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
   },
   "browserslist": {
     "production": [
@@ -50,12 +42,15 @@
     ]
   },
   "devDependencies": {
+    "@eslint/js": "^9.22.0",
     "@stylistic/eslint-plugin-js": "^4.2.0",
     "eslint": "^9.22.0",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^5.2.0",
+    "globals": "^16.0.0",
     "husky": "^9.1.7",
-    "prettier": "3.5.3"
+    "prettier": "3.5.3",
+    "react-app-rewired": "^2.2.1"
   }
 }
