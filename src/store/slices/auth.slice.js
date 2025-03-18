@@ -3,7 +3,7 @@ import { authStatuses } from '../../constants/authStatuses';
 
 export const initialState = {
   status: authStatuses.loggedOut,
-  loading: false,
+  loading: true,
 };
 
 export const authSlice = createSlice({

@@ -6,6 +6,9 @@ import { useNavigate } from 'react-router-dom';
 
 import { PATH } from '../../constants/path';
 import { loginAction } from '../../store/actions';
+import { setUser } from '../../store/slices/user.slice';
+import { setStatus } from '../../store/slices/auth.slice';
+import { authStatuses } from '../../constants/authStatuses';
 
 export const RegistrationForm = () => {
   const [email, setEmail] = useState('');
@@ -23,7 +26,8 @@ export const RegistrationForm = () => {
       setShowPopup(true);
       return;
     }
-    dispatch(loginAction);
+    dispatch(setUser({email}));
+    dispatch(setStatus(authStatuses.loggedIn));
     navigate(PATH.index);
   };
 

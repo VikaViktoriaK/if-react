@@ -11,7 +11,6 @@ import { Loader } from '../../components/Loader';
 import { TopSection } from '../../components/TopSection';
 import { authStatuses } from '../../constants/authStatuses';
 import { PATH } from '../../constants/path';
-import { setLoading } from '../../store/actions';
 
 export const HomePage = () => {
   const dispatch = useDispatch();
@@ -19,20 +18,16 @@ export const HomePage = () => {
     (state) => state.auth.status !== authStatuses.loggedIn,
   );
   const loading = useSelector((state) => state.auth.loading);
-
   const navigate = useNavigate();
 
   useEffect(() => {
     if (loggedOut) {
-      dispatch(setLoading(true));
       navigate(PATH.login);
-    } else {
-      dispatch(setLoading(false));
     }
   }, [loggedOut, navigate, dispatch]);
 
-  if (loading) {
-    return <Loader loading />;
+  if (loggedOut) {
+    return null;
   }
 
   return (
