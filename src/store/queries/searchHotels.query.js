@@ -4,7 +4,7 @@ import { apiEndpoint, baseApiUrl } from '../../constants/path';
 export const hotelsApi = createApi({
   reducerPath: 'hotelsApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: baseApiUrl,
+    baseUrl: baseApiUrl, // Основной URL
   }),
   endpoints: (builder) => ({
     searchHotels: builder.query({
@@ -13,7 +13,10 @@ export const hotelsApi = createApi({
         params: { search, dateFrom, dateTo, adults, children, rooms },
       }),
     }),
+    getHomesPost: builder.query({
+      query: () => '/hotels/popular',
+    }),
   }),
 });
 
-export const { useSearchHotelsQuery } = hotelsApi;
+export const { useSearchHotelsQuery, useGetHomesPost } = hotelsApi;

@@ -1,12 +1,10 @@
-import './HomesLoves.css'
-
+import './HomesLoves.css';
 import React from 'react';
-
-import { useHomesPosts } from '../../hooks/useHomesPosts';
 import { Hotels } from '../Hotels';
+import { useSearchHotelsQuery } from '../../store/queries/searchHotels.query';
 
 export const HomesLoves = () => {
-  const homesLovesData = useHomesPosts();
+  const { data: homesLovesData } = useSearchHotelsQuery();
 
   return (
     <div className="homes-loves">
