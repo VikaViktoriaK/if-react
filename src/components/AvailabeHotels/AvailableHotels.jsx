@@ -1,10 +1,25 @@
-import React from 'react';
+import React from "react";
 
-import { useHotelSearch } from '../../hooks/useHotelsSearch';
-import { Hotels } from '../Hotels';
+import { Hotels } from "../Hotels";
+import { useSearchHotelsQuery } from "../../store/queries/searchHotels.query";
+import { Container } from "../Container";
 
-export const AvailableHotels = () => {
-  const [foundHotels] = useHotelSearch();
+export const AvailableHotels = ({ searchParams }) => {
+  const { data: foundHotels, isLoading } = useSearchHotelsQuery(searchParams);
 
-  return <div>{foundHotels > 0 && <Hotels data={foundHotels} />}</div>;
+  return (
+    <>
+      {" "}
+      {foundHotels && foundHotels.length > 0 && (
+        <div className="available-hotels-block">
+          <h2>Available hotels</h2>
+          <Container>
+            <div className="available-hotels">
+              <Hotels data={foundHotels} />
+            </div>
+          </Container>
+        </div>
+      )}
+    </>
+  );
 };

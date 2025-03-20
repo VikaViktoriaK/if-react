@@ -5,7 +5,6 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import { PATH } from '../../constants/path';
-import { loginAction } from '../../store/actions';
 import { setUser } from '../../store/slices/user.slice';
 import { setStatus } from '../../store/slices/auth.slice';
 import { authStatuses } from '../../constants/authStatuses';

@@ -9,12 +9,13 @@ import { PATH } from "./constants/path";
 import { HotelPage } from "./pages/HotelPage";
 import { HomePage } from "./pages/HomePage";
 import { Registration } from "./pages/Registration";
-import { persistor, store } from "./store";
+import { persistor, store } from './store';
 
 export const App = () => {
   return (
     <Provider store={store}>
         <BrowserRouter>
+          <PersistGate loading={null} persistor={persistor}>
           <Container>
             <Navbar />
           </Container>
@@ -23,6 +24,7 @@ export const App = () => {
             <Route path={PATH.index} element={<HomePage />} />
             <Route path={PATH.hotelById} element={<HotelPage />} />
           </Routes>
+          </PersistGate>
         </BrowserRouter>
     </Provider>
   );

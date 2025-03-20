@@ -8,12 +8,10 @@ import loadingImg from '../../assets/images/load.gif';
 import { authStatuses } from '../../constants/authStatuses';
 import { Container } from '../Container';
 import { Filter } from '../Filter';
-import { Hotels } from '../Hotels';
 import { Calendar } from '../Сalendar';
-import { useSearchHotelsQuery } from '../../requests/searchRequest';
 
 
-export const TopSection = () => {
+export const TopSection = ({onSubmit}) => {
   const [searchParams, setSearchParams] = useState({
     search: '',
     dateFrom: '',
@@ -29,8 +27,6 @@ export const TopSection = () => {
     (state) => state.auth.status !== authStatuses.loggedIn,
   );
 
-  const { data: foundHotels, isLoading } = useSearchHotelsQuery(searchParams);
-
   useEffect(() => {
     if (loggedOut) {
       navigate('/registration');
@@ -44,6 +40,7 @@ export const TopSection = () => {
 
   const handleSearchSubmit = (event) => {
     event.preventDefault();
+    onSubmit(searchParams)
   };
 
   return (
@@ -152,11 +149,11 @@ export const TopSection = () => {
             </button>
           </form>
           <Filter active={filterActive} setActive={setFilterActive} />
-          {isLoading && (
-            <div>
-              <img src={loadingImg} alt="Loading..." />
-            </div>
-          )}
+          {/*{isLoading && (*/}
+          {/*  <div>*/}
+          {/*    <img src={loadingImg} alt="Loading..." />*/}
+          {/*  </div>*/}
+          {/*)}*/}
           <div className="apps">
             <a
               className="google"
@@ -169,16 +166,6 @@ export const TopSection = () => {
           </div>
         </div>
       </Container>
-      {foundHotels && foundHotels.length > 0 && (
-        <div className="available-hotels-block">
-          <h2>Available hotels</h2>
-          <Container>
-            <div className="available-hotels">
-              <Hotels data={foundHotels} />
-            </div>
-          </Container>
-        </div>
-      )}
     </div>
   );
 };
