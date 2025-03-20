@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { hotelsError, hotelsRequest, hotelsSuccess } from '../store/actions/hotelsSearch.action';
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query';
 
 export const useHotelSearch = () => {
   const dispatch = useDispatch();

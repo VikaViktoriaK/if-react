@@ -11,7 +11,6 @@ const persistConfig = {
   storage,
 }
 
-hotelsApi.reducerPath = undefined;
 const rootReducer = combineReducers({
   [authSlice.name]: authSlice.reducer,
   [userSlice.name]: userSlice.reducer,
