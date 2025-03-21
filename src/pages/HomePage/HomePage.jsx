@@ -31,8 +31,6 @@ export const HomePage = () => {
     return null;
   }
 
-  console.log(searchParams);
-
   return (
     <div className="App">
       <TopSection onSubmit={setSearchParams} />

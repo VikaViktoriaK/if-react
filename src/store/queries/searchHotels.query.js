@@ -13,11 +13,7 @@ export const hotelsApi = createApi({
         params: { search, dateFrom, dateTo, adults, children, rooms },
       }),
     }),
-    getHomesPost: builder.query({
-      query: () => '/hotels/popular',
-    }),
   }),
 });
 
-export const { useSearchHotelsQuery} = hotelsApi;
-export const { useGetHomesPost } = hotelsApi;
+export const { useSearchHotelsQuery } = hotelsApi;

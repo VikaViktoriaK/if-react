@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-import loadingImg from '../../assets/images/load.gif';
 import { authStatuses } from '../../constants/authStatuses';
 import { Container } from '../Container';
 import { Filter } from '../Filter';
@@ -149,11 +148,6 @@ export const TopSection = ({onSubmit}) => {
             </button>
           </form>
           <Filter active={filterActive} setActive={setFilterActive} />
-          {/*{isLoading && (*/}
-          {/*  <div>*/}
-          {/*    <img src={loadingImg} alt="Loading..." />*/}
-          {/*  </div>*/}
-          {/*)}*/}
           <div className="apps">
             <a
               className="google"
