@@ -12,9 +12,7 @@ import { authStatuses } from '../../constants/authStatuses';
 import { PATH } from '../../constants/path';
 
 export const HomePage = () => {
-
   const [searchParams, setSearchParams] = useState()
-
   const loggedOut = useSelector(
     (state) => state.auth.status !== authStatuses.loggedIn,
   );

@@ -1,6 +1,7 @@
-import eslintPluginReact from 'eslint-plugin-react';
-import eslintPluginImport from 'eslint-plugin-import';
 import stylisticPlugin from '@stylistic/eslint-plugin-js';
+import eslintPluginImport from 'eslint-plugin-import';
+import eslintPluginPrettier from 'eslint-plugin-prettier';
+import eslintPluginReact from 'eslint-plugin-react';
 import globals from 'globals';
 
 export default [
@@ -20,6 +21,7 @@ export default [
       react: eslintPluginReact,
       import: eslintPluginImport,
       '@stylistic/js': stylisticPlugin,
+      prettier: eslintPluginPrettier,
     },
     rules: {
       'object-curly-spacing': ['error', 'always'],
@@ -41,6 +43,12 @@ export default [
           'newlines-between': 'always',
           alphabetize: { order: 'asc', caseInsensitive: true },
           pathGroupsExcludedImportTypes: ['builtin'],
+        },
+      ],
+      'prettier/prettier': [
+        'error',
+        {
+          singleQuote: true,
         },
       ],
     },

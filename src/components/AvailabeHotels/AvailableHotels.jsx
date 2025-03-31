@@ -1,12 +1,12 @@
 import React from "react";
 
 import { Hotels } from "../Hotels";
-import { useSearchHotelsQuery } from "../../store/queries/searchHotels.query";
+import { useSearchHotelsQuery } from "../../store/apis/hotels/searchHotels.endpoint";
 import { Container } from "../Container";
 import { Loader } from '../Loader';
 
 export const AvailableHotels = ({ searchParams }) => {
-  const { data: foundHotels, isLoading } = useSearchHotelsQuery(searchParams);
+  const { data: foundHotels, isLoading } = useSearchHotelsQuery(searchParams, { skip: !searchParams });
 
   if (isLoading) {
     return <Loader loading={isLoading}><img src="../../assets/images/load.gif" alt="loading..."/></Loader>

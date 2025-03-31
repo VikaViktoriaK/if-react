@@ -5,10 +5,9 @@ export const userSlice = createSlice({
   initialState: {},
   reducers: {
     setUser: (_, action) => {
-     return action.payload;
-    }
+      return action.payload;
+    },
   },
 });
-
 
 export const { setUser } = userSlice.actions;
