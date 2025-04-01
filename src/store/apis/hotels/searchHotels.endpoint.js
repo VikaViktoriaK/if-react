@@ -1,8 +1,8 @@
 import { apiEndpoint } from '../../../constants/path';
 
-import { homesApi } from './getPopularHotels.endpoint';
+import { hotelsApi } from './hotels.api';
 
-export const searchApi = homesApi.injectEndpoints({
+const searchApi = hotelsApi.injectEndpoints({
   endpoints: (builder) => ({
     searchHotels: builder.query({
       query: ({ search = '', dateFrom, dateTo, adults, children, rooms }) => ({

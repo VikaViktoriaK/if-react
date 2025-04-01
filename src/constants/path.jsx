@@ -7,5 +7,6 @@ export const PATH = {
 export const baseApiUrl = 'https://if-student-api.onrender.com/api'
 
 export const apiEndpoint = {
-  hotels: 'hotels'
+  hotels: 'hotels',
+  popularHotels: 'popularHotels',
 }

@@ -1,10 +1,10 @@
 import './HomesLoves.css';
 import React from 'react';
 import { Hotels } from '../Hotels';
-import { useGetHomesPostsQuery } from '../../store/apis/hotels/getPopularHotels.endpoint';
+import {useGetPopularHotelsQuery} from '../../store/apis/hotels/getPopularHotels.endpoint';
 
 export const HomesLoves = () => {
-  const { data: homesLovesData } = useGetHomesPostsQuery();
+  const { data: homesLovesData } = useGetPopularHotelsQuery();
   return (
     <div className="homes-loves">
       <h2>Homes guests loves</h2>
