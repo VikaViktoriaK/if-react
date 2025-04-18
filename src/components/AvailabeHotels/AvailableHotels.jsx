@@ -1,9 +1,9 @@
 import React from "react";
 
 import { Hotels } from "../Hotels";
-import { useSearchHotelsQuery } from "../../store/apis/hotels/searchHotels.endpoint";
 import { Container } from "../Container";
 import { Loader } from '../Loader';
+import {useSearchHotelsQuery} from '../../store/apis';
 
 export const AvailableHotels = ({ searchParams }) => {
   const { data: foundHotels, isLoading } = useSearchHotelsQuery(searchParams, { skip: !searchParams });

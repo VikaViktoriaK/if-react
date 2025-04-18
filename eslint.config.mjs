@@ -45,12 +45,16 @@ export default [
           pathGroupsExcludedImportTypes: ['builtin'],
         },
       ],
-      'prettier/prettier': [
-        'error',
-        {
-          singleQuote: true,
-        },
-      ],
+      'prettier/prettier': ['error', { singleQuote: true }],
+      'no-unused-vars': 'error',
+      'no-undef': 'error',
+      'no-console': 'warn',
+      'no-debugger': 'warn',
+      'no-unreachable': 'error',
+      'no-empty': 'error',
+      'react/jsx-uses-react': 'error',
+      'react/jsx-uses-vars': 'error',
+      semi: ['error', 'always'],
     },
   },
 ];

@@ -5,7 +5,7 @@ import { hotelsApi } from './hotels.api';
 const getPopularApi = hotelsApi.injectEndpoints({
   endpoints: (builder) => ({
     getPopularHotels: builder.query({
-      query: () => apiEndpoint.popularHotels,
+      query: () => `${apiEndpoint.popularHotels}`,
     }),
   }),
 });

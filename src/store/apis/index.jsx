@@ -1,3 +1,2 @@
-import { useSearchHotelsQuery} from './hotels/searchHotels.endpoint';
-import { useGetPopularHotelsQuery } from './hotels/popularHotels.endpoint';
-import {hotelsApi} from './hotels/hotels.api';
+import { useSearchHotelsQuery } from '../../store/apis';
+export * from './hotels/searchHotels.endpoint';
