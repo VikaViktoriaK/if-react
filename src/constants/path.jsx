@@ -4,7 +4,7 @@ export const PATH = {
   hotelById: '/hotels/:id',
 };
 
-export const baseApiUrl = 'https://if-student-api.onrender.com/api'
+export const baseApiUrl = 'https://if-student-api.onrender.com/api';
 
 export const apiEndpoint = {
   hotels: 'hotels',

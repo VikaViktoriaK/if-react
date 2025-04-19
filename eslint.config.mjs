@@ -1,14 +1,19 @@
 import stylisticPlugin from '@stylistic/eslint-plugin-js';
 import eslintPluginImport from 'eslint-plugin-import';
-import eslintPluginPrettier from 'eslint-plugin-prettier';
 import eslintPluginReact from 'eslint-plugin-react';
 import globals from 'globals';
 
 export default [
   {
+    files: ['**/*.js', '**/*.jsx'],
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
       globals: {
         ...globals.browser,
         ...globals.node,
@@ -21,12 +26,23 @@ export default [
       react: eslintPluginReact,
       import: eslintPluginImport,
       '@stylistic/js': stylisticPlugin,
-      prettier: eslintPluginPrettier,
     },
     rules: {
-      'object-curly-spacing': ['error', 'always'],
+      'no-unused-vars': 'error',
+      'no-undef': 'error',
+      'no-console': 'warn',
+      'no-debugger': 'warn',
+      'no-unreachable': 'error',
+      'no-empty': 'error',
+
+      'react/jsx-uses-react': 'error',
+      'react/jsx-uses-vars': 'error',
+
       quotes: ['error', 'single'],
+      semi: ['error', 'always'],
+      'object-curly-spacing': ['error', 'always'],
       '@stylistic/js/indent': ['error', 2],
+
       'import/order': [
         'error',
         {
@@ -45,16 +61,6 @@ export default [
           pathGroupsExcludedImportTypes: ['builtin'],
         },
       ],
-      'prettier/prettier': ['error', { singleQuote: true }],
-      'no-unused-vars': 'error',
-      'no-undef': 'error',
-      'no-console': 'warn',
-      'no-debugger': 'warn',
-      'no-unreachable': 'error',
-      'no-empty': 'error',
-      'react/jsx-uses-react': 'error',
-      'react/jsx-uses-vars': 'error',
-      semi: ['error', 'always'],
     },
   },
 ];

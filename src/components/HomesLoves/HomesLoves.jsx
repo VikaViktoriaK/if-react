@@ -1,7 +1,8 @@
 import './HomesLoves.css';
 import React from 'react';
+
+import { useGetPopularHotelsQuery } from '../../store/apis/hotels/getPopularHotels.endpoint';
 import { Hotels } from '../Hotels';
-import {useGetPopularHotelsQuery} from '../../store/apis/hotels/getPopularHotels.endpoint';
 
 export const HomesLoves = () => {
   const { data: homesLovesData } = useGetPopularHotelsQuery();

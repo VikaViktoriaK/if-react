@@ -1,10 +1,12 @@
-import { configureStore } from "@reduxjs/toolkit";
-import { persistReducer, persistStore } from 'redux-persist';
-import { authSlice } from "./slices/auth.slice";
-import { userSlice } from "./slices/user.slice";
+import { configureStore } from '@reduxjs/toolkit';
 import { combineReducers } from 'redux';
+import { persistReducer, persistStore } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+
 import { hotelsApi } from './apis/hotels/hotels.api';
+import { authSlice } from './slices/auth.slice';
+import { userSlice } from './slices/user.slice';
+
 
 const persistConfig = {
   key: 'root',
@@ -24,7 +26,7 @@ export const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
-        ignoredActions: ["persist/PERSIST"],
+        ignoredActions: ['persist/PERSIST'],
       },
     }).concat(hotelsApi.middleware),
 });

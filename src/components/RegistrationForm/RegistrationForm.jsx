@@ -4,10 +4,10 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-import { PATH } from '../../constants/path';
-import { setUser } from '../../store/slices/user.slice';
-import { setStatus } from '../../store/slices/auth.slice';
 import { authStatuses } from '../../constants/authStatuses';
+import { PATH } from '../../constants/path';
+import { setStatus } from '../../store/slices/auth.slice';
+import { setUser } from '../../store/slices/user.slice';
 
 export const RegistrationForm = () => {
   const [email, setEmail] = useState('');
@@ -25,7 +25,7 @@ export const RegistrationForm = () => {
       setShowPopup(true);
       return;
     }
-    dispatch(setUser({email}));
+    dispatch(setUser({ email }));
     dispatch(setStatus(authStatuses.loggedIn));
     navigate(PATH.index);
   };

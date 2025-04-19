@@ -10,7 +10,7 @@ import { Filter } from '../Filter';
 import { Calendar } from '../Сalendar';
 
 
-export const TopSection = ({onSubmit}) => {
+export const TopSection = ({ onSubmit }) => {
   const [searchParams, setSearchParams] = useState({
     search: '',
     dateFrom: '',
@@ -39,7 +39,7 @@ export const TopSection = ({onSubmit}) => {
 
   const handleSearchSubmit = (event) => {
     event.preventDefault();
-    onSubmit(searchParams)
+    onSubmit(searchParams);
   };
 
   return (
