@@ -9,6 +9,7 @@
 body {
   font-family: "Roboto", sans-serif;
   background-color: #a4bcec;
+  background-image: url("../public/images/fone.png");
 }
 
 ul {

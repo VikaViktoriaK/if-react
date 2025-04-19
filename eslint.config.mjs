@@ -42,6 +42,7 @@ export default [
       semi: ['error', 'always'],
       'object-curly-spacing': ['error', 'always'],
       '@stylistic/js/indent': ['error', 2],
+      '@stylistic/js/eol-last': ['error', 'always'], // Added rule
 
       'import/order': [
         'error',

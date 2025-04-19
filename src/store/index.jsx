@@ -3,7 +3,7 @@ import { combineReducers } from 'redux';
 import { persistReducer, persistStore } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-import { hotelsApi } from './apis/hotels/hotels.api';
+import { hotelsApi } from './apis';
 import { authSlice } from './slices/auth.slice';
 import { userSlice } from './slices/user.slice';
 

@@ -1,7 +1,8 @@
 import './HomesLoves.css';
 import React from 'react';
 
-import { useGetPopularHotelsQuery } from '../../store/apis/hotels/getPopularHotels.endpoint';
+
+import { useGetPopularHotelsQuery } from '../../store/apis';
 import { Hotels } from '../Hotels';
 
 export const HomesLoves = () => {
