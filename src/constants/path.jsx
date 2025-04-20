@@ -3,3 +3,10 @@ export const PATH = {
   login: '/registration',
   hotelById: '/hotels/:id',
 };
+
+export const baseApiUrl = 'https://if-student-api.onrender.com/api';
+
+export const apiEndpoint = {
+  hotels: 'hotels',
+  popularHotels: 'hotels/popular',
+};

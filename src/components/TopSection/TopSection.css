@@ -4,10 +4,12 @@
   background-repeat: no-repeat;
   margin: 0 auto;
   background-color: #a4bcec;
+  background-image: url("../../../public/images/fone.png");
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background-position: center 15%;
+
 }
 
 .apps {
@@ -54,19 +56,6 @@
 
 .name-block + .name-hr:hover {
   color: #f5bd41;
-}
-
-{
-  height: 100vh;
-  background-image: url("../../assets/images/castelmezzano.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  margin: 0 auto;
-  background-color: #a4bcec;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-position: center 15%;
 }
 
 .top-content {
