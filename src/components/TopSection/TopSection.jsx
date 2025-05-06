@@ -9,6 +9,8 @@ import { Container } from '../Container';
 import { Filter } from '../Filter';
 import { Calendar } from '../Сalendar';
 
+import { useTopSectionStyles } from './TopSection.styless';
+
 
 export const TopSection = ({ onSubmit }) => {
   const [searchParams, setSearchParams] = useState({
@@ -25,6 +27,7 @@ export const TopSection = ({ onSubmit }) => {
   const loggedOut = useSelector(
     (state) => state.auth.status !== authStatuses.loggedIn,
   );
+  const classes = useTopSectionStyles();
 
   useEffect(() => {
     if (loggedOut) {
@@ -43,15 +46,15 @@ export const TopSection = ({ onSubmit }) => {
   };
 
   return (
-    <div className="top-section">
+    <div className={classes.topSection}>
       <Container>
-        <div className="top-content">
+        <div className={classes.topContent}>
           <h1>
             Discover stays <br />
             to live, work or just relax
           </h1>
-          <form className="form" id="form" onSubmit={handleSearchSubmit}>
-            <div className="form-elements country form-desktop-edition">
+          <form className={classes.form} onSubmit={handleSearchSubmit}>
+            <div className="form-elements country">
               <label htmlFor="search">Your destination or hotel name</label>
               <input
                 name="search"
@@ -66,75 +69,7 @@ export const TopSection = ({ onSubmit }) => {
               <Calendar />
               <Calendar />
             </div>
-            <div className="form-mobile-edition">
-              <div className="form-elements country">
-                <input
-                  className="input-country"
-                  type="text"
-                  placeholder="Your destination or hotel name"
-                  value={searchParams.search}
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="date-mobile">
-                <div className="form-elements">
-                  <label htmlFor="dateFrom">Check-in date</label>
-                  <input
-                    id="dateFrom"
-                    name="dateFrom"
-                    type="date"
-                    value={searchParams.dateFrom}
-                    onChange={handleChange}
-                  />
-                </div>
-                <div className="form-elements">
-                  <label htmlFor="dateTo">Check-out date</label>
-                  <input
-                    id="dateTo"
-                    name="dateTo"
-                    type="date"
-                    value={searchParams.dateTo}
-                    onChange={handleChange}
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="form-mobile-edition">
-              <div className="form-elements adults">
-                <label htmlFor="adults">Adults</label>
-                <input
-                  id="adults"
-                  name="adults"
-                  type="number"
-                  min="1"
-                  value={searchParams.adults}
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="form-elements form-children-border">
-                <label htmlFor="children">Children</label>
-                <input
-                  id="children"
-                  name="children"
-                  type="number"
-                  min="0"
-                  value={searchParams.children}
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="form-elements">
-                <label htmlFor="rooms">Room</label>
-                <input
-                  id="rooms"
-                  name="rooms"
-                  type="number"
-                  min="1"
-                  value={searchParams.rooms}
-                  onChange={handleChange}
-                />
-              </div>
-            </div>
-            <div className="form-elements options form-desktop-edition">
+            <div className="form-elements options">
               <input
                 name="options"
                 id="options-input"
@@ -143,18 +78,18 @@ export const TopSection = ({ onSubmit }) => {
                 placeholder={'1 Adults — 3 Children — 1 Room'}
               />
             </div>
-            <button className="form-button" id="form-button" type="submit">
+            <button className={classes.formButton} type="submit">
               Search
             </button>
           </form>
           <Filter active={filterActive} setActive={setFilterActive} />
-          <div className="apps">
+          <div className={classes.apps}>
             <a
-              className="google"
+              className={classes.google}
               href="https://play.google.com/store/games?hl=ru&gl=US"
             ></a>
             <a
-              className="app-store"
+              className={classes.appStore}
               href="https://www.apple.com/ru/app-store/"
             ></a>
           </div>

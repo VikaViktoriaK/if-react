@@ -3,8 +3,11 @@ import { Link } from 'react-router-dom';
 
 import { Container } from '../Container';
 
+import { useNavbarStyles } from './Navbar.styles';
+
 export const Navbar = () => {
   const [dropdown, setDropdown] = useState(false);
+  const classes = useNavbarStyles();
 
   const showDropdown = () => {
     setDropdown(true);
@@ -13,24 +16,23 @@ export const Navbar = () => {
   return (
     <div>
       <Container>
-        <header className="header">
-          <div className="header-logo"></div>
-          <div className="header-sections">
-            <div className="header-links">
+        <header className={classes.header}>
+          <div className={classes.headerLogo}></div>
+          <div className={classes.headerSections}>
+            <div className={classes.headerLinks}>
               <a href="#">Stays</a>
               <a href="#">Attractions</a>
             </div>
-            <div className="header-buttons">
-              <button className="button-night"></button>
+            <div className={classes.headerButtons}>
+              <button className={classes.buttonNight}></button>
               <button
-                className="button-account"
+                className={classes.buttonAccount}
                 onClick={showDropdown}
               ></button>
-              <button className="button-menu"></button>
             </div>
           </div>
           {dropdown && (
-            <div className="dropdown-block">
+            <div className={classes.dropdownBlock}>
               <svg
                 width="20"
                 height="18"
@@ -43,7 +45,7 @@ export const Navbar = () => {
                   fill="#333333"
                 />
               </svg>
-              <Link className="dropdown-link" to="/registration">
+              <Link className={classes.dropdownLink} to="/registration">
                 Sign-out
               </Link>
             </div>

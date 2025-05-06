@@ -1,15 +1,15 @@
 .top-section {
-  height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
   margin: 0 auto;
   background-color: #a4bcec;
-  background-image: url("../../../public/images/fone.png");
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background-position: center 15%;
-
+  background-image: url("../../../public/images/fone.png");
+  height: 100vh;
+  width: 100vw;
 }
 
 .apps {
@@ -33,124 +33,8 @@
   background-position-x: 120px;
 }
 
-.ah {
-  display: block;
-}
-
-.name-hr {
-  width: 100px;
-  height: 4px;
-  background-color: transparent;
-  border: none;
-  margin: 0 auto;
-}
-
-.available-hotels-block {
-  background-color: #ffffff;
-}
-
-.available-hotels-img {
-  width: 295px;
-  height: 295px;
-}
-
-.name-block + .name-hr:hover {
-  color: #f5bd41;
-}
-
 .top-content {
   margin-top: 196px;
-}
-
-.header {
-  padding-top: 51px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.header-logo {
-  height: 40px;
-  width: 205px;
-  background-image: url("../TopSection/images/logo-more.png");
-  background-size: cover;
-}
-
-.header-sections {
-  display: flex;
-  align-items: center;
-  gap: 48px;
-}
-
-.header-links {
-  display: flex;
-  gap: 24px;
-  cursor: pointer;
-}
-
-.link-block {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-}
-
-.hr-links {
-  width: 50px;
-  height: 4px;
-  background-color: #f5bd41;
-  display: none;
-}
-
-.link-block:hover + hr {
-  display: block;
-}
-
-.header-links a {
-  border-bottom: solid 4px transparent;
-}
-
-.header-links a:hover {
-  border-bottom: solid 4px #f5bd41;
-}
-
-.link-stays:hover {
-  border-bottom: solid 4px #f5bd41;
-}
-
-.link-attractions:hover {
-  border-bottom: solid 4px #f5bd41;
-}
-
-.header-buttons {
-  display: flex;
-  gap: 24px;
-  cursor: pointer;
-  align-items: center;
-}
-
-.button-night {
-  height: 40px;
-  width: 30px;
-  background-image: url("../TopSection/images/logo-more.png");
-  background-size: cover;
-  background-position-x: 71px;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-}
-
-.button-account {
-  max-height: 40px;
-  max-width: 40px;
-  background-image: url("../TopSection/images/logo-more.png");
-  width: 277px;
-  height: 40px;
-  background-size: cover;
-  background-position-x: 40px;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  position: relative;
 }
 
 .form-button {
@@ -164,34 +48,6 @@
   font-weight: 500;
   color: #ffffff;
   cursor: pointer;
-}
-
-.button-menu {
-  width: 24px;
-  height: 16px;
-  background-image: url("../TopSection/images/menu.svg");
-  background-size: cover;
-  background-position-x: 20px;
-  border: none;
-  background-color: transparent;
-  display: none;
-}
-
-.dropdown-block {
-  background-color: white;
-  display: flex;
-  gap: 16px;
-  padding-left: 16px;
-  align-items: center;
-  width: 190px;
-  height: 50px;
-  position: absolute;
-  transform: translate(530%,130%)
-}
-
-.dropdown-link {
-  font-size: 20px;
-  color: #333333;
 }
 
 .form {
@@ -203,51 +59,8 @@
   margin-bottom: 15px;
 }
 
-.form-name {
-  font-weight: 400;
-  font-size: 18px;
-  color: #ffffff;
-}
-
-._name-margin {
-  margin-right: 221px;
-}
-
-._form-settings {
-  height: 64px;
-  padding: 0;
-}
-
-.form-mobile-edition {
-  display: none;
-}
-
-.form-button {
-  width: 192px;
-  height: 64px;
-  padding: 0;
-  border: none;
-  border-radius: 8px;
-  background-color: #3077c6;
-  font-size: 24px;
-  font-weight: 500;
-  color: #ffffff;
-}
-
 .form-elements {
   position: relative;
-}
-
-.input-hotels {
-  background-color: #ffffff;
-  color: #000000;
-  padding: 10px 20px;
-  border-radius: 10px;
-}
-
-.filter-container {
-  position: absolute;
-  bottom: -60px;
 }
 
 .country {
