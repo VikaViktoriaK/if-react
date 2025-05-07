@@ -1,5 +1,3 @@
-import './TopSection.css';
-
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -54,7 +52,7 @@ export const TopSection = ({ onSubmit }) => {
             to live, work or just relax
           </h1>
           <form className={classes.form} onSubmit={handleSearchSubmit}>
-            <div className="form-elements country">
+            <div className={`${classes.formElements} ${classes.country}`}>
               <label htmlFor="search">Your destination or hotel name</label>
               <input
                 name="search"
@@ -65,14 +63,13 @@ export const TopSection = ({ onSubmit }) => {
                 onChange={handleChange}
               />
             </div>
-            <div className="form-elements date">
+            <div className={`${classes.formElements} ${classes.date}`}>
               <Calendar />
               <Calendar />
             </div>
-            <div className="form-elements options">
+            <div className={`${classes.formElements} ${classes.options}`}>
               <input
                 name="options"
-                id="options-input"
                 type="text"
                 onClick={() => setFilterActive(true)}
                 placeholder={'1 Adults — 3 Children — 1 Room'}

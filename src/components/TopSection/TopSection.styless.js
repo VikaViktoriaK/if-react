@@ -1,18 +1,13 @@
 import { createUseStyles } from 'react-jss';
 
-import backGround from '../../assets/images/castelmezzano.png';
-
 const topSectionStyles = {
   topSection: {
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     margin: '0 auto',
-    backgroundColor: '#a4bcec',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    backgroundPosition: 'center 15%',
-    backgroundImage: `url(${backGround})`,
     height: '100vh',
     width: '100vw',
   },
@@ -63,9 +58,31 @@ const topSectionStyles = {
     marginTop: 150,
     marginBottom: 15,
   },
-
+  
   formElements: {
     position: 'relative',
+    width: '100%',
+    '& input': {
+      width: '100%',
+      height: 64,
+      borderRadius: '8px',
+      border: '3px solid transparent',
+      paddingLeft: '24px',
+      fontSize: '18px',
+      '&::placeholder': {
+        fontSize: '18px',
+        color: '#000000',
+      },
+      '&:focus': {
+        border: '3px solid #f5bd41',
+      },
+    },
+    '& label': {
+      position: 'absolute',
+      top: '-36px',
+      left: '15px',
+      color: '#ffffff',
+    },
   },
 
   country: {
