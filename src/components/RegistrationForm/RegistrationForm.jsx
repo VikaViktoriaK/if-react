@@ -1,5 +1,3 @@
-import './RegistrationForm.css';
-
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -9,6 +7,8 @@ import { PATH } from '../../constants/path';
 import { setStatus } from '../../store/slices/auth.slice';
 import { setUser } from '../../store/slices/user.slice';
 
+import { useRegistrationFormStyles } from './RegistrationForm.styless';
+
 export const RegistrationForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -16,6 +16,8 @@ export const RegistrationForm = () => {
   const [showPopup, setShowPopup] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  const classes = useRegistrationFormStyles();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -32,16 +34,16 @@ export const RegistrationForm = () => {
 
   return (
     <div>
-      <div className="reg-form">
-        <div className="reg-form-name">
+      <div className={classes.regForm}>
+        <div className={classes.regFormName}>
           <h3>Sign in</h3>
         </div>
         <form onSubmit={handleSubmit}>
-          <div className="reg-form-el">
-            <div className="reg-form-field">
+          <div className={classes.regFormEl}>
+            <div className={classes.regFormField}>
               <label htmlFor="email">Email address</label>
               <input
-                className="reg-form-input"
+                className={classes.regFormInput}
                 name="email"
                 type="email"
                 id="email"
@@ -50,10 +52,10 @@ export const RegistrationForm = () => {
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
-            <div className="reg-form-field">
+            <div className={classes.regFormField}>
               <label htmlFor="password">Password</label>
               <input
-                className="reg-form-input"
+                className={classes.regFormInput}
                 type="password"
                 id="password"
                 autoComplete="off"
@@ -62,16 +64,16 @@ export const RegistrationForm = () => {
               />
             </div>
             <div>
-              <button className="reg-button" type="submit">
+              <button className={classes.regButton} type="submit">
                 Sign in
               </button>
             </div>
           </div>
         </form>
         {showPopup && (
-          <div className="popup">
-            <div className="popup-content">
-              <p className="reg-error-message">{errorMessage}</p>
+          <div>
+            <div>
+              <p className={classes.regErrorMessage}>{errorMessage}</p>
             </div>
           </div>
         )}

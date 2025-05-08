@@ -8,8 +8,12 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  background-color: #a4bcec;
+  background-color: #ffffff;
   background-image: url("../public/images/fone.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
 }
 
 ul {
@@ -33,6 +37,7 @@ h2 {
   text-align: center;
   padding-top: 120px;
   margin-bottom: 20px;
+  cursor: pointer;
 }
 
 a {

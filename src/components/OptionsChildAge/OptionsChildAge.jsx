@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import { useOptionsChildAgeStyles } from './OptionsChildAge.styles';
+
 export const OptionsChildAge = () => {
   const numbers = Array.from({ length: 18 }, (_, index) => index);
   const [selectedNumber, setSelectedNumber] = useState(numbers[0]);
@@ -7,12 +9,14 @@ export const OptionsChildAge = () => {
   const handleChange = (event) => {
     setSelectedNumber(Number(event.target.value));
   };
+  
+  const classes = useOptionsChildAgeStyles();
 
   return (
     <div>
-      <div className="options-select-item">
+      <div>
         <select
-          className="options-child-age-select"
+          className={classes.optionsChildAgeSelect}
           name="options-child-age"
           value={selectedNumber}
           onChange={handleChange}
