@@ -1,60 +1,63 @@
 import React from 'react';
 
-import './gth.css';
+import islandImg from '../../assets/images/island.png';
+import maldivesImg from '../../assets/images/maldives.png';
+import norwayImg from '../../assets/images/norway.png';
+import spainImg from '../../assets/images/spain.png';
 import { Container } from '../Container';
 
+import { useBestDestinationsStyles } from './BestDestinations.styles';
+
 export const BestDestinations = () => {
+  const classes = useBestDestinationsStyles();
+  
   return (
-    <div className="destinations">
+    <div>
       <Container>
         <h2>The best destinations</h2>
-        <div className="destinations-content">
-          <div className="destinations-buttons">
-            <button className="button-region">Regions</button>
-            <button className="button-cities">Cities</button>
-            <button className="button-places">Places of interest</button>
-            <button className="button-places-mobile">Places</button>
+        <div className={classes.destinationsContent}>
+          <div className={classes.destinationsButtons}>
+            <button className={classes.buttonRegion}>Regions</button>
+            <button className={classes.buttonCities}>Cities</button>
+            <button className={classes.buttonPlaces}>Places of interest</button>
           </div>
-          <div className="destinations-blocks regions-block">
-            <div className="open-block">
-              <div className="destinations-element">
-                <div className="destination-image">
-                  <img src="../../assets/images/maldives.png" alt="maldives" />
+          <div className={classes.destinationsBlocks}>
+            <div className={classes.openBlock}>
+              <div className={classes.destinationsElement}>
+                <div className={classes.destinationImage}>
+                  <img src={maldivesImg} alt="maldives" />
                 </div>
-                <button className="destinations-button">Book now</button>
-                <a className="destinations-name" href="#">Maldives</a>
+                <button className={classes.destinationsButton}>Book now</button>
+                <a className={classes.destinationsName} href="#">
+                  Maldives
+                </a>
               </div>
-              <div className="destinations-element">
-                <div className="destination-image">
-                  <img src="../../assets/images/spain.png" alt="spain" />
+              <div className={classes.destinationsElement}>
+                <div className={classes.destinationImage}>
+                  <img src={spainImg} alt="spain" />
                 </div>
-                <button className="destinations-button">Book now</button>
-                <a className="destinations-name" href="#">Spain</a>
+                <button className={classes.destinationsButton}>Book now</button>
+                <a className={classes.destinationsName} href="#">
+                  Spain
+                </a>
               </div>
-              <div className="destinations-element none-mobile">
-                <div className="destination-image">
-                  <img
-                    src="../../assets/images/norway.png"
-                    alt=""
-                    className="destinations-img"
-                  />
+              <div className={classes.destinationsElement}>
+                <div className={classes.destinationImage}>
+                  <img src={norwayImg} alt="" />
                 </div>
-                <button className="destinations-button">Book now</button>
-                <a className="destinations-name" href="#">Norway</a>
+                <button className={classes.destinationsButton}>Book now</button>
+                <a className={classes.destinationsName} href="#">
+                  Norway
+                </a>
               </div>
-              <div className="destinations-element none-mobile">
-                <div className="destination-image">
-                  <img
-                    src="../../assets/images/island.png"
-                    alt=""
-                    className="destinations-img"
-                  />
+              <div className={classes.destinationsElement}>
+                <div className={classes.destinationImage}>
+                  <img src={islandImg} alt="island" />
                 </div>
-                <button className="destinations-button">Book now</button>
-                <a className="destinations-name" href="#">Island</a>
-              </div>
-              <div className="hi">
-                <button className="destinations-button-next"></button>
+                <button className={classes.destinationsButton}>Book now</button>
+                <a className={classes.destinationsName} href="#">
+                  Island
+                </a>
               </div>
             </div>
           </div>

@@ -1,6 +1,6 @@
 import { createUseStyles } from 'react-jss';
 
-const homeLovesStyles = {
+const homeLovesStyles = () => ( {
   homesLoves: {
     backgroundColor: '#eaf0f9',
   },
@@ -14,6 +14,6 @@ const homeLovesStyles = {
     marginTop: 80,
     backgroundColor: '#eaf0f9',
   },
-};
+});
 
 export const useHomeLovesStyles = createUseStyles(homeLovesStyles);

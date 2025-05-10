@@ -1,9 +1,9 @@
 import { createUseStyles } from 'react-jss';
 
-const offersStyles = {
+const offersStyles = (theme) => ({
   containerOffer: {
     marginTop: 40,
-    backgroundColor: '#ffffff',
+    backgroundColor: theme.palette.primary.dark,
   },
   offersGroup: {
     display: 'flex',
@@ -11,7 +11,7 @@ const offersStyles = {
     justifyContent: 'center',
     gap: 16,
     marginTop: 80,
-    marginBottom: 114,
+    paddingBottom: 114,
   },
   offersItem: {
     width: 296,
@@ -54,6 +54,6 @@ const offersStyles = {
     fontSize: 24,
     fontWeight: 400,
   },
-};
+});
 
 export const useOffersStyles = createUseStyles(offersStyles);

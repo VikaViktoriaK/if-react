@@ -1,9 +1,11 @@
 import React from 'react';
+import { useTheme } from 'react-jss';
 
 import { useOffersStyles } from './Offers.styles';
 
 export const Offers = () => {
-  const classes = useOffersStyles();
+  const theme = useTheme();
+  const classes = useOffersStyles({ theme });
   
   return (
     <div className={classes.containerOffer}>

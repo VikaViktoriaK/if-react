@@ -1,34 +1,44 @@
 import React from 'react';
 
-import './ffffff.css';
+import kingImg from '../../assets/images/kk-khostel.png';
+import rokokoImg from '../../assets/images/rokoko.png';
+import baliImg from '../../assets/images/ubud-bali.png';
 import { Container } from '../Container';
 
+import { useReviewsStyles } from './Reviews.styles';
+
 export const Reviews = () => {
+  const classes = useReviewsStyles();
+  
   return (
-    <div className="reviews">
+    <div className={classes.reviews}>
       <Container>
         <h2>Guests reviews</h2>
-        <div className="reviews-blocks">
-          <div className="reviews-card">
-            <div className="review-image">
-              <img src="../../assets/images/image.png" alt="Ubud Bali Resort&SPA" />
-              <div className="review-price">
+        <div className={classes.reviewsBlocks}>
+          <div className={classes.reviewsCard}>
+            <div className={classes.reviewImageBlock}>
+              <img
+                className={classes.reviewImage}
+                src={baliImg}
+                alt="Ubud Bali Resort&SPA"
+              />
+              <div className={classes.reviewPrice}>
                 <span>From 250 USD</span>
               </div>
             </div>
-            <div className="card-info">
-              <div className="card-about">
-                <div className="card-links">
+            <div className={classes.cardInfo}>
+              <div className={classes.cardAbout}>
+                <div className={classes.cardLinks}>
                   <a href="#">Ubud Bali Resort&SPA</a>
                   <a href="#">Bali, Indonesia</a>
                 </div>
-                <div className="nav-rating">
-                  <div className="rating">9,4</div>
+                <div className={classes.navRating}>
+                  <div className={classes.rating}>9,4</div>
                   <span>1324 reviews</span>
                 </div>
               </div>
-              <div className="user-block">
-                <div className="user-image">
+              <div className={classes.userBlock}>
+                <div className={classes.userImage}>
                   <svg
                     viewBox="0 0 54 54"
                     fill="none"
@@ -40,7 +50,7 @@ export const Reviews = () => {
                     />
                   </svg>
                 </div>
-                <div className="user-info">
+                <div className={classes.userInfo}>
                   <span>Hanna Ivanova</span>
                   <div>
                     <svg
@@ -63,7 +73,7 @@ export const Reviews = () => {
                   </div>
                 </div>
               </div>
-              <p className="review-text">
+              <p className={classes.reviewText}>
                 Great location, really pleasant and clean <br />
                 rooms, but the thing that makes this such a <br />
                 good place to stay are the staff. All of the <br />
@@ -72,39 +82,45 @@ export const Reviews = () => {
               </p>
             </div>
           </div>
-          <div className="reviews-card reviews-swipe">
-            <div className="review-image">
-              <img src="../../../public/images/fff.png" alt="King Kong Hostel" />
-              <div className="review-price">
+          <div className={classes.reviewsCard}>
+            <div className={classes.reviewImageBlock}>
+              <img
+                className={classes.reviewImage}
+                src={kingImg}
+                alt="King Kong Hostel"
+              />
+              <div className={classes.reviewPrice}>
                 <span>From 40 USD</span>
               </div>
             </div>
-            <div className="card-info">
-              <div className="card-about">
-                <div className="card-links">
+            <div className={classes.cardInfo}>
+              <div className={classes.cardAbout}>
+                <div className={classes.cardLinks}>
                   <a href="#">King Kong Hostel</a>
                   <a href="#">Rotterdam, Netherlands</a>
                 </div>
-                <div className="nav-rating">
-                  <div className="rating">8,9</div>
+                <div className={classes.navRating}>
+                  <div className={classes.rating}>8,9</div>
                   <span>2016 reviews</span>
                 </div>
               </div>
-              <div className="user-block">
-                <svg
-                  width="54"
-                  height="54"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M27 .3334C12.28.3334.3333 12.28.3333 27 .3333 41.72 12.28 53.6667 27 53.6667 41.72 53.6667 53.6666 41.72 53.6666 27 53.6666 12.28 41.72.3334 27 .3334Zm0 8c4.4266 0 8 3.5733 8 8 0 4.4266-3.5734 8-8 8-4.4267 0-8-3.5734-8-8 0-4.4267 3.5733-8 8-8ZM27 46.2c-6.6667 0-12.56-3.4133-16-8.5866.08-5.3067 10.6666-8.2134 16-8.2134 5.3066 0 15.92 2.9067 16 8.2134C39.56 42.7867 33.6666 46.2 27 46.2Z"
-                    fill="#BFBFBF"
-                  />
-                </svg>
-                <div className="user-info">
-                  <span className="user-name">Adam Smith</span>
-                  <div className="user-country">
+              <div className={classes.userBlock}>
+                <div className={classes.userImage}>
+                  <svg
+                    width="54"
+                    height="54"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M27 .3334C12.28.3334.3333 12.28.3333 27 .3333 41.72 12.28 53.6667 27 53.6667 41.72 53.6667 53.6666 41.72 53.6666 27 53.6666 12.28 41.72.3334 27 .3334Zm0 8c4.4266 0 8 3.5733 8 8 0 4.4266-3.5734 8-8 8-4.4267 0-8-3.5734-8-8 0-4.4267 3.5733-8 8-8ZM27 46.2c-6.6667 0-12.56-3.4133-16-8.5866.08-5.3067 10.6666-8.2134 16-8.2134 5.3066 0 15.92 2.9067 16 8.2134C39.56 42.7867 33.6666 46.2 27 46.2Z"
+                      fill="#BFBFBF"
+                    />
+                  </svg>
+                </div>
+                <div className={classes.userInfo}>
+                  <span>Adam Smith</span>
+                  <div>
                     <svg
                       width="17"
                       height="13"
@@ -133,11 +149,11 @@ export const Reviews = () => {
                         </clipPath>
                       </defs>
                     </svg>
-                    <span className="user-country">USA</span>
+                    <span>USA</span>
                   </div>
                 </div>
               </div>
-              <p className="review-text">
+              <p className={classes.reviewText}>
                 I've been in this hostel for a month and here <br />
                 is the best hostel of all <br />
                 Excellent management of excellent and <br />
@@ -148,39 +164,45 @@ export const Reviews = () => {
               </p>
             </div>
           </div>
-          <div className="reviews-card reviews-swipe">
-            <div className="review-image">
-              <img src="./src/images/rokoko-hotel.png" alt="Rokoko Hotel" />
-              <div className="review-price">
+          <div className={classes.reviewsCard}>
+            <div className={classes.reviewImageBlock}>
+              <img
+                className={classes.reviewImage}
+                src={rokokoImg}
+                alt="Rokoko Hotel"
+              />
+              <div className={classes.reviewPrice}>
                 <span>From 100 USD</span>
               </div>
             </div>
-            <div className="card-info">
-              <div className="card-about">
-                <div className="card-links">
+            <div className={classes.cardInfo}>
+              <div className={classes.cardAbout}>
+                <div className={classes.cardLinks}>
                   <a href="#">Rokoko Hotel</a>
                   <a href="#">Ourika, Marocco</a>
                 </div>
-                <div className="nav-rating">
-                  <div className="rating">9,1</div>
+                <div className={classes.navRating}>
+                  <div className={classes.rating}>9,1</div>
                   <span>815 reviews</span>
                 </div>
               </div>
-              <div className="user-block">
-                <svg
-                  width="54"
-                  height="54"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M27 .3334C12.28.3334.3333 12.28.3333 27 .3333 41.72 12.28 53.6667 27 53.6667 41.72 53.6667 53.6666 41.72 53.6666 27 53.6666 12.28 41.72.3334 27 .3334Zm0 8c4.4266 0 8 3.5733 8 8 0 4.4266-3.5734 8-8 8-4.4267 0-8-3.5734-8-8 0-4.4267 3.5733-8 8-8ZM27 46.2c-6.6667 0-12.56-3.4133-16-8.5866.08-5.3067 10.6666-8.2134 16-8.2134 5.3066 0 15.92 2.9067 16 8.2134C39.56 42.7867 33.6666 46.2 27 46.2Z"
-                    fill="#BFBFBF"
-                  />
-                </svg>
-                <div className="user-info">
-                  <span className="user-name">Anika Messer</span>
-                  <div className="user-country">
+              <div className={classes.userBlock}>
+                <div className={classes.userImage}>
+                  <svg
+                    width="54"
+                    height="54"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M27 .3334C12.28.3334.3333 12.28.3333 27 .3333 41.72 12.28 53.6667 27 53.6667 41.72 53.6667 53.6666 41.72 53.6666 27 53.6666 12.28 41.72.3334 27 .3334Zm0 8c4.4266 0 8 3.5733 8 8 0 4.4266-3.5734 8-8 8-4.4267 0-8-3.5734-8-8 0-4.4267 3.5733-8 8-8ZM27 46.2c-6.6667 0-12.56-3.4133-16-8.5866.08-5.3067 10.6666-8.2134 16-8.2134 5.3066 0 15.92 2.9067 16 8.2134C39.56 42.7867 33.6666 46.2 27 46.2Z"
+                      fill="#BFBFBF"
+                    />
+                  </svg>
+                </div>
+                <div className={classes.userInfo}>
+                  <span>Anika Messer</span>
+                  <div>
                     <svg
                       width="17"
                       height="13"
@@ -205,11 +227,11 @@ export const Reviews = () => {
                         </clipPath>
                       </defs>
                     </svg>
-                    <span className="user-country">Germany</span>
+                    <span>Germany</span>
                   </div>
                 </div>
               </div>
-              <p className="review-text">
+              <p className={classes.reviewText}>
                 Efficient, friendly, professional, and <br />
                 appropriately attentive. Great hotel in a <br />
                 great location. Easy access to all the <br />
