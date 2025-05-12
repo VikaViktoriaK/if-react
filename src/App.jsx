@@ -12,14 +12,14 @@ import { HomePage } from './pages/HomePage';
 import { HotelPage } from './pages/HotelPage';
 import { Registration } from './pages/Registration';
 import { persistor, store } from './store';
-import { darkTheme } from './styles/darkTheme';
+import { lightTheme } from './styles/lightTheme';
 
 export const App = () => {
   return (
     <Provider store={store}>
       <BrowserRouter>
         <PersistGate loading={null} persistor={persistor}>
-          <ThemeProvider theme={darkTheme}>
+          <ThemeProvider theme={lightTheme}>
             <Container>
               <Navbar />
             </Container>

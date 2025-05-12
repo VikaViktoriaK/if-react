@@ -3,7 +3,7 @@ import { createUseStyles } from 'react-jss';
 const offersStyles = (theme) => ({
   containerOffer: {
     marginTop: 40,
-    backgroundColor: theme.palette.primary.dark,
+    backgroundColor: theme.palette.primary.additional,
   },
   offersGroup: {
     display: 'flex',

@@ -1,9 +1,9 @@
-import { createUseStyles } from "react-jss";
+import { createUseStyles } from 'react-jss';
 
-const reviewsStyles = {
+const reviewsStyles = (theme) => ({
   reviews: {
-    backgroundColor: '#ffffff',
-    marginBottom: '120px',
+    backgroundColor: theme.palette.primary.background,
+    paddingBottom: '120px',
   },
   reviewsBlocks: {
     marginTop: '104px',
@@ -106,6 +106,6 @@ const reviewsStyles = {
     flexDirection: 'column',
     gap: '8px',
   },
-};
+});
 
-export const useReviewsStyles = createUseStyles(reviewsStyles)
+export const useReviewsStyles = createUseStyles(reviewsStyles);

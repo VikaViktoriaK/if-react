@@ -1,12 +1,14 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { useTheme } from 'react-jss';
 import { useNavigate } from 'react-router-dom';
 
 import { useHotelItemStyles } from './HotelItem.styles';
 
 export const HotelItem = ({ id, imageUrl, name, city, country }) => {
   const router = useNavigate();
-  const classes = useHotelItemStyles();
+  const theme = useTheme();
+  const classes = useHotelItemStyles({ theme });
 
   return (
     <div

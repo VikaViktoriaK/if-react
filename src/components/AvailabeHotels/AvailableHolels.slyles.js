@@ -1,8 +1,10 @@
 import { createUseStyles } from 'react-jss';
 
+import { darkTheme as theme } from '../../styles/darkTheme';
+
 const availableHotelsStyles = {
   availableHotelsBlock: {
-    backgroundColor: '#ffffff',
+    backgroundColor: theme.palette.primary.background,
   },
 
   availableHotels: {

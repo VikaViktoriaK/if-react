@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTheme } from 'react-jss';
 
 import islandImg from '../../assets/images/island.png';
 import maldivesImg from '../../assets/images/maldives.png';
@@ -9,10 +10,11 @@ import { Container } from '../Container';
 import { useBestDestinationsStyles } from './BestDestinations.styles';
 
 export const BestDestinations = () => {
-  const classes = useBestDestinationsStyles();
+  const theme = useTheme();
+  const classes = useBestDestinationsStyles({ theme });
   
   return (
-    <div>
+    <div  className={classes.root}>
       <Container>
         <h2>The best destinations</h2>
         <div className={classes.destinationsContent}>

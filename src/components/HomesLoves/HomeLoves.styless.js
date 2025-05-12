@@ -1,8 +1,8 @@
 import { createUseStyles } from 'react-jss';
 
-const homeLovesStyles = () => ( {
+const homeLovesStyles = (theme) => ( {
   homesLoves: {
-    backgroundColor: '#eaf0f9',
+    backgroundColor: theme.palette.primary.background,
   },
   homesGroup: {
     display: 'flex',
@@ -12,7 +12,7 @@ const homeLovesStyles = () => ( {
     position: 'relative',
     paddingBottom: 114,
     marginTop: 80,
-    backgroundColor: '#eaf0f9',
+    backgroundColor: theme.palette.primary.background,
   },
 });
 

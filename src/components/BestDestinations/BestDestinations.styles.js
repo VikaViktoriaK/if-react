@@ -1,6 +1,10 @@
 import { createUseStyles } from 'react-jss';
 
-const bestDestinationsStyles = {
+
+const bestDestinationsStyles = (theme) => ( {
+  root: {
+    backgroundColor: theme.palette.primary.background,
+  },
   destinationsContent: {
     display: 'flex',
     flexDirection: 'column',
@@ -11,7 +15,7 @@ const bestDestinationsStyles = {
     width: '50%',
     height: '64px',
     borderRadius: '8px',
-    backgroundColor: '#f3f3f4',
+    backgroundColor: theme.palette.primary.background,
     marginTop: '80px',
     cursor: 'pointer',
   },
@@ -90,7 +94,7 @@ const bestDestinationsStyles = {
   destinationsName: {
     fontSize: '24px',
     fontWeight: 400,
-    color: '#3077c6',
+    color: theme.palette.primary.accent,
   },
   destinationImage: {
     width: '100%',
@@ -100,8 +104,8 @@ const bestDestinationsStyles = {
     width: '128px',
     height: '48px',
     display: 'inline-block',
-    backgroundColor: '#ffffff',
-    color: '#3077c6',
+    backgroundColor: theme.palette.primary.background,
+    color: theme.palette.primary.accent,
     fontSize: '18px',
     fontWeight: 400,
     borderRadius: '8px',
@@ -113,10 +117,10 @@ const bestDestinationsStyles = {
     opacity: 0,
     zIndex: 2,
     '&:hover': {
-      backgroundColor: '#3077c6',
-      color: '#ffffff',
+      backgroundColor: theme.palette.primary.accent,
+      color: theme.palette.primary.background,
     },
   },
-};
+});
 
 export const useBestDestinationsStyles = createUseStyles(bestDestinationsStyles);

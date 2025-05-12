@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTheme } from 'react-jss';
 
 import kingImg from '../../assets/images/kk-khostel.png';
 import rokokoImg from '../../assets/images/rokoko.png';
@@ -8,7 +9,8 @@ import { Container } from '../Container';
 import { useReviewsStyles } from './Reviews.styles';
 
 export const Reviews = () => {
-  const classes = useReviewsStyles();
+  const theme = useTheme();
+  const classes = useReviewsStyles({ theme });
   
   return (
     <div className={classes.reviews}>
