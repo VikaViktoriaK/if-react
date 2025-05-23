@@ -5,8 +5,11 @@ import { Container } from '../Container';
 import { Hotels } from '../Hotels';
 import { Loader } from '../Loader';
 
+import { useAvailableHotelsStyles } from './AvailableHolels.slyles';
+
 export const AvailableHotels = ({ searchParams }) => {
   const { data: foundHotels, isLoading } = useSearchHotelsQuery(searchParams, { skip: !searchParams });
+  const classes = useAvailableHotelsStyles();
 
   if (isLoading) {
     return <Loader loading={isLoading}><img src="../../assets/images/load.gif" alt="loading..."/></Loader>;
@@ -15,10 +18,10 @@ export const AvailableHotels = ({ searchParams }) => {
   return (
     <>
       {foundHotels && foundHotels.length > 0 && (
-        <div className="available-hotels-block">
+        <div className={classes.availableHotelsBlock}>
           <h2>Available hotels</h2>
           <Container>
-            <div className="available-hotels">
+            <div className={classes.availableHotels}>
               <Hotels data={foundHotels} />
             </div>
           </Container>

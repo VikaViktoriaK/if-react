@@ -5,6 +5,7 @@ import storage from 'redux-persist/lib/storage';
 
 import { hotelsApi } from './apis';
 import { authSlice } from './slices/auth.slice';
+import { themeSlice } from './slices/theme.slice';
 import { userSlice } from './slices/user.slice';
 
 
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   [authSlice.name]: authSlice.reducer,
   [userSlice.name]: userSlice.reducer,
   [hotelsApi.reducerPath]: hotelsApi.reducer,
+  theme: themeSlice.reducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
