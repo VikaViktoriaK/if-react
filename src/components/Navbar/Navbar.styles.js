@@ -76,9 +76,7 @@ const navbarStyles = {
   buttonNight: {
     height: 40,
     width: 30,
-    backgroundImage: `url(${logoImage})`,
     backgroundSize: 'cover',
-    backgroundPositionX: 71,
     border: 'none',
     backgroundColor: 'transparent',
     cursor: 'pointer',
